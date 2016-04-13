@@ -42,6 +42,8 @@ class Pages extends CI_Controller {
         public function PHL()
 	{
 		$this->load->view('PHL');
-
-	}
-}
+        }
+        
+        
+        
+  }
