@@ -33,9 +33,15 @@ class Pages extends CI_Controller {
 	{
 		$this->load->view('logbook');
 	}
-        
+
         public function presensimahasiswa()
 	{
 		$this->load->view('presensimahasiswa');
+        }
+        
+        public function PHL()
+	{
+		$this->load->view('PHL');
+
 	}
 }

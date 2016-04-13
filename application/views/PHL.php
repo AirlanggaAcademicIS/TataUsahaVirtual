@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Logbook</title>
+	<title>PHL</title>
 
 	<style type="text/css">
 
@@ -68,10 +68,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-
-    <div style="width: 50%; float: right; text-align: center;" ><a></a></div><div style="width: 50%; text-align: center;"><a href="<?php echo base_url(); ?>index.php/pages/presensimahasiswa">Mahasiswa mengisi presensi</a></div>
     <div style="width: 50%; float: right; text-align: center;" ><a></a></div><div style="width: 50%; text-align: center;"><a href="<?php echo base_url(); ?>index.php/pages/PHL">Mahasiswa mengisi jadwal PHL</a></div>
-    <img src="<?php echo base_url(); ?>assets/img/logbook.png" width="100%" height="100%">
+    <img src="<?php echo base_url(); ?>assets/img/PHL.png" width="100%" height="100%">
 </div>
 
 </body>
