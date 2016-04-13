@@ -68,7 +68,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
+<<<<<<< HEAD:application/views/home.php
     <div style="width: 50%; float: right; text-align: center;" ><a>Login as petugas TU</a></div><div style="width: 50%; text-align: center;"><a href="<?php echo base_url(); ?>pages/log_book">Mahasiswa mengisi logbook</a></div>
+=======
+    <div style="width: 50%; float: right; text-align: center;" ><a></a></div><div style="width: 50%; text-align: center;"><a href="<?php echo base_url(); ?>index.php/pages/logbook">Mahasiswa mengisi logbook</a></div>
+>>>>>>> origin/master:application/views/home.php
     <img src="<?php echo base_url(); ?>assets/img/home_page.jpg" width="100%" height="100%">
 </div>
 
