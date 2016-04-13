@@ -29,11 +29,7 @@ class Pages extends CI_Controller {
 		$this->load->view('home');
 	}
         
-<<<<<<< HEAD:application/controllers/Pages.php
-        public function log_book()
-=======
         public function logbook()
->>>>>>> origin/master:application/controllers/Pages.php
 	{
 		$this->load->view('logbook');
 	}

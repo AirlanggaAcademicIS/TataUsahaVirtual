@@ -68,11 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-<<<<<<< HEAD
-    <div style="width: 50%; float: right; text-align: center;" ><a>Login as petugas TU</a></div><div style="width: 50%; text-align: center;"><a>Mahasiswa mengisi logbook</a></div>
-=======
     <div style="width: 50%; float: right; text-align: center;" ><a></a></div><div style="width: 50%; text-align: center;"><a>Mahasiswa mengisi logbook</a></div>
->>>>>>> origin/master
     <img src="<?php echo base_url(); ?>assets/img/logbook.png" width="100%" height="100%">
 </div>
 
