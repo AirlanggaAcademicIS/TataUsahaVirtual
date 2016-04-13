@@ -33,4 +33,8 @@ class Pages extends CI_Controller {
 	{
 		$this->load->view('logbook');
 	}
+        public function PHL()
+	{
+		$this->load->view('PHL');
+	}
 }
