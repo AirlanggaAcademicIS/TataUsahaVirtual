@@ -1,0 +1,88 @@
+<br><br><br>
+<table border="3" ALIGN="center">
+<td width="60%" >
+<form method="post" action="" name="">
+	<img src="http://localhost/unair logo.png">
+	<center><h4>SI SISTEM INFORMASI <br>
+				FAKULTAS SAINS DAN TEKNOLOGI <br>
+				UNIVERSITAS AIRLANGGA</h4><hr></center>
+	<table border="0" width="100%" cellpadding="2" id="table1">
+		<center><h4>FORM KEPERLUAN BANTUAN/FASILITAS <br>
+					- Tata Usaha -</h4><hr></center>
+		<br>
+		<tr>
+			<td width="0%">Nama (*)</td>
+			<td><input type="text" name="nama" required size="20"></td>
+			<td width="0%">Semester (*)</td>
+			<td><select size="1" name="kepadabagian" required>
+			<option selected value="">- Pilih Semester -</option>
+			<option value="semester1">Semester 1</option>
+			<option value="semester2">Semester 2</option>
+			<option value="semester3">Semester 3</option>
+			<option value="semester4">Semester 4</option>
+			<option value="semester5">Semester 5</option>
+			<option value="semester6">Semester 6</option>
+			<option value="semester7">Semester 7</option>
+			<option value="semester8">Semester 8</option>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			<td width="0%">NIP (*)</td>
+			<td><input type="text" name="nim" required size="20"></td>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			<td width="0%">Tata Usaha Bagian (*)</td>
+			<td><select size="1" name="kepadabagian" required>
+			<option selected value="">- Pilih Kepada Bagian -</option>
+			<option value="prodi/jurusan">Prodi/Jurusan</option>
+			<option value="item2">item2</option>
+			<option value="item3">item3</option>
+			<td width="0%">Dosen Wali (*)</td>
+			<td><select size="1" name="dosenwali" required>
+			<option selected value="">- Pilih Dosen Wali -</option>
+			<option value="etowuryanto">Eto Wuryanto</option>
+			<option value="evahariyanti">Eva Hariyanti</option>
+			<option value="indrakharisma">Indra Kharisma</option>
+			<option value="badruszaman">Badrus Zaman</option>
+			<option value="purbandini">Purbandini</option>
+			<option value="taufik">Taufik</option>
+			<option value="ira">Ira Purpitasari</option>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			<td width="0%">Request Mahasiswa (*)</td>
+			<td><textarea rows="5" name="cari" required cols="25"></textarea></td>
+		</tr>
+		<tr>
+			<td width="0%">Upload Dokumen (*)</td>
+			<td><input type="text" name="uploaddokumen" required size="20"> <input type="submit" value="     Browser     " name="B1"></td>
+		</tr>
+		<tr>
+			<td width="0%">Email (*)</td>
+			<td><input type="text" name="email" required size="20"></td>
+		</tr>
+		<tr>
+			<td width="0%"><br><br>
+				<a href="#">Home</a> > <a href="#">Keperluan</a> > <a href="#">Detail Keperluan</a></td>
+			<td></td><td></td>
+			<td><br><br><input type="submit" value="     Send     " name="B1">
+			<input type="reset" value="   Reset   " name="B2"></td>
+		</tr>
+		
+	</table>
+</form> 
+</td>
+</table>
+ 
+
+<!-- END-KONTEN -->
+<!-- FOOTER -->
+<div id="footer_container">
+    <div id="footer">
+	</div>
+</div>
+<!-- END-FOOTER -->
