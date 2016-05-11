@@ -43,6 +43,13 @@ class Pages extends CI_Controller {
             $this->load->view('dashboard/request_skripsi');
             $this->load->view('dashboard/footer');
 	}
+
+     public function request_phl()
+    {
+            $this->load->view('dashboard/header');
+            $this->load->view('dashboard/request_phl');
+            $this->load->view('dashboard/footer');
+    }
         
         public function pengajuan_proposal()
 	{
