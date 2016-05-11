@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pages extends CI_Controller {
+class Pages_tu extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,57 +18,57 @@ class Pages extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
     
-        function Pages() { 
+        function Pages_tu() { 
             parent::__construct();
             $this->load->helper('url');
         }
         
 	public function index()
 	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/tabel_mhs');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/tabel_mhs');
+            $this->load->view('dashboard_tu/footer_tu');
 	}
         
         public function bantuan_fasilitas()
 	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_bantuan');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/respon_bantuan_tu');
+            $this->load->view('dashboard_tu/footer_tu');
 	}
         
         public function pengajuan_skripsi()
 	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_skripsi');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/respon_skripsi_tu');
+            $this->load->view('dashboard_tu/footer_tu');
 	}
 
      public function request_phl()
     {
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_phl');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/respon_phl_tu');
+            $this->load->view('dashboard_tu/footer_tu');
     }
         
         public function pengajuan_proposal()
 	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_proposal');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/respon_proposal_tu');
+            $this->load->view('dashboard_tu/footer_tu');
 	}
         
         public function absensi()
 	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_absensi');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/respon_absensi_tu');
+            $this->load->view('dashboard_tu/footer_tu');
 	}
         
         public function other(){
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_other');
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/respon_other_tu');
+            $this->load->view('dashboard_tu/footer_tu');
         }
 
         public function docs_box(){   
@@ -80,9 +80,9 @@ class Pages extends CI_Controller {
                 'documents' => $hasil 
             );
             
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/docsbox', $data);
-            $this->load->view('dashboard/footer');
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/docsbox_tu', $data);
+            $this->load->view('dashboard_tu/footer_tu');
 	}	
 
 	public function input_u(){
