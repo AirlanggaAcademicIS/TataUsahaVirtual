@@ -1,5 +1,0 @@
-virtualtu/application/controller  <- Ini untuk class controller
-virtualtu/application/view  <- Ini untuk class user interface
-virtualtu/application/model  <- Ini untuk class model (Menghubungkan dengan database)
-
-Dokumen yang ingin di commit bisa dimasukkan ke folder documentation
