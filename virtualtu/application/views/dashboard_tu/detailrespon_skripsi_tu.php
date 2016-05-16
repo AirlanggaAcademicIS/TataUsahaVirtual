@@ -3,8 +3,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Tabel Data
-            <small>Mahasiswa Pengajuan Skripsi</small>
+            Detail Data
+            <small>Detail Data Mahasiswa Pengajuan Skripsi</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,6 +28,9 @@
 						<th>No.Hp</th>
                         <th>Topik</th>
                         <th>Judul</th>
+						<th>Dosen Wali</th>
+						<th>Pembimbing 1</th>
+						<th>Pembimbing 2</th>
 						 <th>Aksi</th>
                       </tr>
                     </thead>
@@ -38,7 +41,10 @@
                         <td>089678482575</td>
 						 <td>RSI</td>
                         <td>Analisis.....</td>
-                        <td><a href="http://www.google.com">Detail</a> | <a href="http://www.google.com">Delete</a></td>
+						<th>Dosen Wali</th>
+						<th>Pembimbing 1</th>
+						<th>Pembimbing 2</th>
+                        <td><a href="http://www.google.com">Edit</a> |<a href="http://www.google.com"> Validasi</a> | <a href="http://www.google.com">Delete</a></td>
                       </tr>
                       <tr>
                         <td>00000000</td>
@@ -46,15 +52,21 @@
                         <td>00000000</td>
 						<td>Audit</td>
                         <td>Analisis.....</td>
-                        <td><a href="http://www.google.com">Detail </a>| <a href="http://www.google.com">Delete</a></td>
+						<th>Dosen Wali</th>
+						<th>Pembimbing 1</th>
+						<th>Pembimbing 2</th>
+                        <td><a href="http://www.google.com">Edit </a>|<a href="http://www.google.com"> Validasi</a> | <a href="http://www.google.com">Delete</a></td>
                       </tr>
                       <tr>
-                        <td>00000000</td>
-                        <td>Dwi Indah Cahyati</td>
-                        <td>00000000</td>
+                        <td>081311633024</td>
+                        <td>Dwi Indah Cahyani</td>
+                        <td>081935099906</td>
 						<td>RPL</td>
                         <td>Analisis.....</td>
-                        <td><a href="http://www.google.com">Detail</a> | <a href="http://www.google.com">Delete</a></td>
+						<th>Dosen Wali</th>
+						<th>Pembimbing 1</th>
+						<th>Pembimbing 2</th>
+                        <td><a href="http://www.google.com">Edit</a> |<a href="http://www.google.com"> Validasi</a> | <a href="http://www.google.com">Delete</a></td>
                       </tr>
                     </tbody>
                     <tfoot>

@@ -30,42 +30,48 @@ class Pages_tu extends CI_Controller {
             $this->load->view('dashboard_tu/footer_tu');
 	}
         
-        public function bantuan_fasilitas()
+        public function respon_bantuan_fasilitas()
 	{
             $this->load->view('dashboard_tu/header_tu');
             $this->load->view('dashboard_tu/respon_bantuan_tu');
             $this->load->view('dashboard_tu/footer_tu');
 	}
         
-        public function pengajuan_skripsi()
+        public function respon_skripsi_tu()
 	{
             $this->load->view('dashboard_tu/header_tu');
             $this->load->view('dashboard_tu/respon_skripsi_tu');
             $this->load->view('dashboard_tu/footer_tu');
 	}
+ 		public function detailrespon_skripsi_tu()
+	{
+            $this->load->view('dashboard_tu/header_tu');
+            $this->load->view('dashboard_tu/detailrespon_skripsi_tu');
+            $this->load->view('dashboard_tu/footer_tu');
+	}
 
-     public function request_phl()
+     public function respon_request_phl()
     {
             $this->load->view('dashboard_tu/header_tu');
             $this->load->view('dashboard_tu/respon_phl_tu');
             $this->load->view('dashboard_tu/footer_tu');
     }
         
-        public function pengajuan_proposal()
+        public function respon_pengajuan_proposal()
 	{
             $this->load->view('dashboard_tu/header_tu');
             $this->load->view('dashboard_tu/respon_proposal_tu');
             $this->load->view('dashboard_tu/footer_tu');
 	}
         
-        public function absensi()
+        public function respon_absensi()
 	{
             $this->load->view('dashboard_tu/header_tu');
             $this->load->view('dashboard_tu/respon_absensi_tu');
             $this->load->view('dashboard_tu/footer_tu');
 	}
         
-        public function other(){
+        public function respon_other(){
             $this->load->view('dashboard_tu/header_tu');
             $this->load->view('dashboard_tu/respon_other_tu');
             $this->load->view('dashboard_tu/footer_tu');
