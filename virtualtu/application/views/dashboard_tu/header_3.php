@@ -48,22 +48,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo base_url(); ?>pages">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="<?php echo base_url(); ?>pages/docs_box">TU Box Docs</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log TU <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo base_url(); ?>pages/absensi">Respon Surat Izin Absensi</a></li>
-                    <li><a href="<?php echo base_url(); ?>pages/bantuan_fasilitas">Respon Surat Bantuan Fasilitas</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>pages/pengajuan_proposal">Respon Pengajuan Proposal</a></li>
-                    <li><a href="<?php echo base_url(); ?>pages/pengajuan_skripsi">Respon Pengajuan Skripsi</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>pages/request_phl">Respon PHL</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>pages/other">Other</a></li>
-                  </ul>
-                </li>
+                <li><a href="<?php echo base_url(); ?>tupages">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="<?php echo base_url(); ?>tupages/docs_box">Shared Documents</a></li>
+                <li class="active"><a href="<?php echo base_url(); ?>tupages/log_mahasiswa">Log Mahasiswa</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
             <!-- Navbar Right Menu -->
@@ -74,16 +61,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <!-- The user image in the navbar-->
-                      <img src="<?php echo base_url(); ?>assets/img/myprofile.png" class="user-image" alt="User Image">
+                      <img src="<?php echo base_url(); ?>assets/img/avatar5.png" class="user-image" alt="User Image">
                       <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                      <span class="hidden-xs">Rio Ramadhan Dharmawan</span>
+                      <span class="hidden-xs">Rio Petugas TU</span>
                     </a>
                     <ul class="dropdown-menu">
                       <!-- The user image in the menu -->
                       <li class="user-header">
-                        <img src="<?php echo base_url(); ?>assets/img/myprofile.png" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url(); ?>assets/img/avatar5.png" class="img-circle" alt="User Image">
                         <p>
-                          Rio Ramadhan Dharmawan <br>Mahasiswa
+                          Rio Petugas TU <br>Petugas TU
                           <small>Member since Nov. 2016</small>
                         </p>
                       </li>

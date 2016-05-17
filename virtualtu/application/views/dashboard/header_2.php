@@ -48,8 +48,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo base_url(); ?>pages">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="<?php echo base_url(); ?>pages/docs_box">TU Box Docs</a></li>
+                <li><a href="<?php echo base_url(); ?>pages">Home <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="<?php echo base_url(); ?>pages/docs_box">Documents Shared</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log TU <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a href="<?php echo base_url(); ?>pages/pengajuan_proposal">Request pengajuan proposal</a></li>
                     <li><a href="<?php echo base_url(); ?>pages/pengajuan_skripsi">Request pengajuan skripsi</a></li>
                     <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>pages/request_phl">Request PHL</a></li>
+                    <li><a href="#">Request ganti jadwal</a></li>
                     <li class="divider"></li>
                     <li><a href="<?php echo base_url(); ?>pages/other">Other</a></li>
                   </ul>

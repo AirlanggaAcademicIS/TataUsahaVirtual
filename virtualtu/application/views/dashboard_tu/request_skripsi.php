@@ -4,12 +4,12 @@
         <section class="content-header">
           <h1>
             Request
-            <small>pengajuan proposal</small>
+            <small>pengajuan skripsi</small>
           </h1>
           <ol class="breadcrumb">
             <li><i class="fa fa-dashboard"></i> Home</a></li>
             <li>Log TU</li>
-            <li>Request Pengajuan Proposal</li>
+            <li>Request Pengajuan Skripsi</li>
           </ol>
         </section>
 
@@ -21,7 +21,7 @@
             <div class="box-header with-border">
                 <div class="box-tools pull-right">
                     <div class="col-md-12"></div>
-                    <div class="col-md-12"><h4>Today : <?php echo date('d-m-Y');?></h4></div>
+                    <div class="col-md-12"><h4>Today : <?php echo date('Y-m-d H:i:s');?></h4></div>
                     
                 </div>
             </div><!-- /.box-header -->
@@ -49,21 +49,15 @@
                   <div class="col-md-6">
                     <!-- textarea -->
                     <div class="form-group">
-                      <label>Judul Proposal</label>
+                      <label>Judul Skripsi</label>
                       <textarea class="form-control" rows="3" placeholder="Text here ..."></textarea>
                     </div> 
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Topik Proposal</label>
-                      <select class="form-control select2" style="width: 100%;">
-                      <option selected="selected">--Pilih--</option>
-                      <option>Data Mining</option>
-                      <option>Penelitian Dosen</option>
-                      <option>Rekayasan Sistem Informasi</option>
-                      <option>Sistem Pendukung Keputusan</option>
-                    </select>
-                    </div> 
+                      <label>Nilai toefl</label>
+                      <input type="number" class="form-control">
+                    </div>
                   </div>
               </div>
               <div class="row">
@@ -72,8 +66,11 @@
                     <label>Dosen Wali</label>
                     <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option>DIC</option>
-                      <option>RRD</option>
+                      <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                      ?>
                     </select>
                   </div><!-- /.form-group --> 
                   </div>
@@ -82,16 +79,22 @@
                     <label>Dosen Pembimbing 1</label>
                     <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option>DIC</option>
-                      <option>RRD</option>
+                      <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                      ?>
                     </select>
                   </div><!-- /.form-group --> 
                     <div class="form-group">
                         <label>Dosen Pembimbing 2</label>
                         <select class="form-control select2" style="width: 100%;">
                         <option selected="selected">--Pilih--</option>
-                        <option>DIC</option>
-                        <option>RRD</option>
+                        <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                        ?>
                         </select>
                     </div><!-- /.form-group --> 
                     <div class="form-group">

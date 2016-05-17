@@ -198,7 +198,7 @@
       $(function () {
         $(".select2").select2();
         //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+        $("#datemask").inputmask("yyyy/mm/dd", {"placeholder": "yyyy/mm/dd"});
         //Money Euro
         $("[data-mask]").inputmask();
         $("#example1").DataTable();

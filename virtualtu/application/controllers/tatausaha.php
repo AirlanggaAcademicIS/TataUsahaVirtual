@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Mahasiswa extends CI_Controller {
+class Tatausaha extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,9 +18,13 @@ class Mahasiswa extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
     
-        function Mahasiswa() { 
+        function Tatausaha() { 
             parent::__construct();
             $this->load->helper('url');
+        }
+
+        function index(){
+            $this->load->view('login_tu');
         }
         
         public function log_tu_bantuan($nim){   
@@ -43,7 +47,7 @@ class Mahasiswa extends CI_Controller {
                     redirect(base_url("pages/bantuan_fasilitas"), 'refresh');
                 }
             } 
-	}
+	   }
         
         public function log_tu_absensi($nim){   
             $tanggal = date('Y-m-d H:i:s');

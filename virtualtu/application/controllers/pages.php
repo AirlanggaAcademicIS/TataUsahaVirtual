@@ -23,50 +23,54 @@ class Pages extends CI_Controller {
             $this->load->helper('url');
         }
         
-	public function index()
-	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/tabel_mhs');
+	   public function index(){
+            $this->load->view('dashboard/header_1');
+            $this->load->view('dashboard/home');
             $this->load->view('dashboard/footer');
-	}
+	   }
         
-        public function bantuan_fasilitas()
-	{
-            $this->load->view('dashboard/header');
+        public function bantuan_fasilitas(){
+            $this->load->view('dashboard/header_3');
             $this->load->view('dashboard/request_bantuan');
             $this->load->view('dashboard/footer');
-	}
+	   }
         
-        public function pengajuan_skripsi()
-	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_skripsi');
+        public function pengajuan_skripsi(){
+            $this->load->model('models_dosen');
+            $hasil = $this->models_dosen->getalldosen();
+            
+            $data = array(
+                'jumlah' => sizeof($hasil),
+                'dosen' => $hasil 
+            );
+            
+            $this->load->view('dashboard/header_3');
+            $this->load->view('dashboard/request_skripsi', $data);
             $this->load->view('dashboard/footer');
-	}
-
-     public function request_phl()
-    {
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_phl');
-            $this->load->view('dashboard/footer');
-    }
+	   }
         
-        public function pengajuan_proposal()
-	{
-            $this->load->view('dashboard/header');
-            $this->load->view('dashboard/request_proposal');
+        public function pengajuan_proposal(){
+            $this->load->model('models_dosen');
+            $hasil = $this->models_dosen->getalldosen();
+            
+            $data = array(
+                'jumlah' => sizeof($hasil),
+                'dosen' => $hasil 
+            );
+            
+            $this->load->view('dashboard/header_3');
+            $this->load->view('dashboard/request_proposal', $data);
             $this->load->view('dashboard/footer');
-	}
+	   }
         
-        public function absensi()
-	{
-            $this->load->view('dashboard/header');
+        public function absensi(){
+            $this->load->view('dashboard/header_3');
             $this->load->view('dashboard/request_absensi');
             $this->load->view('dashboard/footer');
-	}
+	   }
         
         public function other(){
-            $this->load->view('dashboard/header');
+            $this->load->view('dashboard/header_3');
             $this->load->view('dashboard/request_other');
             $this->load->view('dashboard/footer');
         }
@@ -80,20 +84,10 @@ class Pages extends CI_Controller {
                 'documents' => $hasil 
             );
             
-            $this->load->view('dashboard/header');
+            $this->load->view('dashboard/header_2');
             $this->load->view('dashboard/docsbox', $data);
             $this->load->view('dashboard/footer');
 	}	
-
-	public function input_u(){
-		$username = $this->input->post('username');
-
-        $password = $this->input->post('password');
-
-        $this->load->model('m_latihan');
-
-        $insert = $this->m_latihan->input_user($username, $password);
-	}
 }
 
 /* End of file welcome.php */

@@ -55,18 +55,22 @@ class Models_log_tu extends CI_Model {
         return $hasil;
     }
 
-    function getAllUser() {
-        $query = $this->db->get('user');
+    function getall() {
+        $query = $this->db->query('SELECT * FROM log_tu q1, kategori q2 WHERE q1.id_kategori_log = q2.id_kategori');
         
         $i = 0;
         foreach ($query->result_array() as $row)
         {
-            $user[$i]['username'] = $row['username'];
-            $user[$i]['password'] = $row['password'];
+            $log_tu[$i]['id_log_tu'] = $row['id_log_tu'];
+            $log_tu[$i]['nim'] = $row['nim'];
+            $log_tu[$i]['tanggal_log'] = $row['tanggal_log'];
+            $log_tu[$i]['id_kategori'] = $row['id_kategori'];
+            $log_tu[$i]['jenis_kategori'] = $row['jenis_kategori'];
+            $log_tu[$i]['isi_log'] = $row['isi_log'];
             
             $i++;
         }
-        return $user;
+        return $log_tu;
     }
 
 }

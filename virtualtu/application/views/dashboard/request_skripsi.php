@@ -66,8 +66,11 @@
                     <label>Dosen Wali</label>
                     <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option>DIC</option>
-                      <option>RRD</option>
+                      <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                      ?>
                     </select>
                   </div><!-- /.form-group --> 
                   </div>
@@ -76,16 +79,22 @@
                     <label>Dosen Pembimbing 1</label>
                     <select class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option>DIC</option>
-                      <option>RRD</option>
+                      <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                      ?>
                     </select>
                   </div><!-- /.form-group --> 
                     <div class="form-group">
                         <label>Dosen Pembimbing 2</label>
                         <select class="form-control select2" style="width: 100%;">
                         <option selected="selected">--Pilih--</option>
-                        <option>DIC</option>
-                        <option>RRD</option>
+                        <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                        ?>
                         </select>
                     </div><!-- /.form-group --> 
                     <div class="form-group">

@@ -27,6 +27,7 @@
             </div><!-- /.box-header -->
             <div class="box-body">
               <div class="row">
+                  <form action="<?php echo base_url(); ?>mahasiswa/log_tu_bantuan/081311633027" method="post">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nama</label>
@@ -38,33 +39,34 @@
                   </div>  
                   <div class="form-group">
                     <label>Kepada Bagian</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select name="kepada_bagian" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option>Admin Lab</option>
-                      <option>Sarana Prasana</option>
-                      <option>Sistem Informasi Fakultas</option>
-                      <option>Tata Usaha Pusat</option>
+                      <option value="1">Admin Lab</option>
+                      <option value="1">Sarana Prasana</option>
+                      <option value="1">Sistem Informasi Fakultas</option>
+                      <option value="1">Tata Usaha Pusat</option>
                     </select>
                   </div><!-- /.form-group -->
                 </div><!-- /.col -->
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Dosen Wali</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select name="dosen_wali" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option>DIC</option>
-                      <option>RRD</option>
+                      <option value="1">DIC</option>
+                      <option value="1">RRD</option>
                     </select>
                   </div><!-- /.form-group -->
                   <!-- textarea -->
                     <div class="form-group">
                       <label>Deskripsi</label>
-                      <textarea class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      <textarea name="deskripsi" class="form-control" rows="3" placeholder="Text here ..."></textarea>
                     </div>
                   <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
                   </div>
                 </div><!-- /.col -->
+                 </form>
               </div><!-- /.row -->
             </div><!-- /.box-body -->
             <div class="box-footer">

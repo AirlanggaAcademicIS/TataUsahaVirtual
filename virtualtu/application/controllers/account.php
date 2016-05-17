@@ -45,7 +45,27 @@ class Account extends CI_Controller {
             else{
                 $this->load->view('login');
             }
-	}	
+	}
+        
+        public function sign_in_tu(){   
+            $nip = $this->input->post('nip');
+            $password = $this->input->post('password');
+            $hasil = false;
+            if($nip==""||$password==""){
+                
+            }
+            else{
+                $this->load->model('models_petugas_tu');
+                $hasil = $this->models_petugas_tu->sign_in($nip, $password);
+            }
+            
+            if($hasil==true){
+                redirect(base_url("tupages"), 'refresh');
+            }
+            else{
+                $this->load->view('login_tu');
+            }
+	}
 
 	public function input_u(){
 		$username = $this->input->post('username');

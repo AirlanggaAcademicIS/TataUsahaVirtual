@@ -4,12 +4,12 @@
         <section class="content-header">
           <h1>
             Request
-            <small>bantuan dana dan fasilitas</small>
+            <small>surat izin absensi</small>
           </h1>
           <ol class="breadcrumb">
             <li><i class="fa fa-dashboard"></i> Home</a></li>
             <li>Log TU</li>
-            <li>Request Bantuan</li>
+            <li>Request Surat Izin Absensi</li>
           </ol>
         </section>
 
@@ -27,6 +27,7 @@
             </div><!-- /.box-header -->
             <div class="box-body">
               <div class="row">
+                  <form action="<?php echo base_url(); ?>mahasiswa/log_tu_absensi/081311633027" method="post">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nama</label>
@@ -39,24 +40,25 @@
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                      <input name="hari_absen" type="text" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                 </div><!-- /.col -->
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nim</label>
-                    <input name="nim" type="text" class="form-control" value="081311633027" disabled>
+                    <input id="nim" name="nim" type="text" class="form-control" value="081311633027" disabled>
                   </div> 
                   <!-- textarea -->
                     <div class="form-group">
                       <label>Keterangan Absen</label>
-                      <textarea class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      <textarea name="keterangan_absen" class="form-control" rows="3" placeholder="Text here ..."></textarea>
                     </div>
                   <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
                   </div>
                 </div><!-- /.col -->
+                </form>
               </div><!-- /.row -->
             </div><!-- /.box-body -->
             <div class="box-footer">
