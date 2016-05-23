@@ -66,6 +66,36 @@ class Mahasiswa extends CI_Controller {
                 }
             } 
 	}
+	
+	public function log_tu_phl($nim){   
+            $tanggal = date('Y-m-d H:i:s');
+        //    $hari = $this->input->post('hari_absen');
+          //  $hari_absen = str_replace('/', '-', $hari);
+		    $mata_kuliah = $this->input->post('mata_kuliah');
+            $jumlah_sks = $this->input->post('jumlah_sks');
+			$jumlah_mahasiswa = $this->input->post('jumlah_mahasiswa');
+			$ruang_sebelumnya = $this->input->post('ruang_sebelumnya');
+			$ruang_request = $this->input->post('ruang_request');
+			$jadwal_sebelumnya = $this->input->post('jadwal_sebelumnya');
+			$jadwal_request = $this->input->post('jadwal_request');
+			$hari = $this->input->post('hari');
+            $hasil = false;
+            if($nim==""||$mata_kuliah==""){
+            }
+            else{
+                $this->load->model('models_log_tu');
+                $hasil = $this->models_log_tu->input_log_tu($nim, $tanggal, 1, "");
+                $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
+                if($hasil==true){
+                    $this->load->model('models_phl');
+                    $this->models_phl->input_phl($id_log_tu, $mata_kuliah, $jumlah_sks, $jumlah_mahasiswa, $ruang_sebelumnya, $ruang_request, $jadwal_sebelumnya, $jadwal_request, $hari);
+                }
+                else{
+                    redirect(base_url("pages/request_phl"), 'refresh');
+                }
+            } 
+	}
+
 
 	public function sign_in(){   
             $nim = $this->input->post('nim');
