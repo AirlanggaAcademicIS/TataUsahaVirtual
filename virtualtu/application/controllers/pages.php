@@ -30,17 +30,39 @@ class Pages extends CI_Controller {
 	   }
         
         public function bantuan_fasilitas(){
+            
+            if(isset($_GET['m'])){
+                $data = array(
+                    'ket' => $_GET['m']
+                );
+            }
+            else{
+                $data = array(
+                    );
+            }
+
             $this->load->view('dashboard/header_3');
-            $this->load->view('dashboard/request_bantuan');
+            $this->load->view('dashboard/request_bantuan', $data);
             $this->load->view('dashboard/footer');
 	   }
+
+       public function phl(){
+           
+           if(isset($_GET['m'])){
+                $data = array(
+                    'ket' => $_GET['m']
+                );
+            }
+            else{
+                $data = array(
+                    );
+            }
+            
+            $this->load->view('dashboard/header_3');
+            $this->load->view('dashboard/request_phl', $data);
+            $this->load->view('dashboard/footer');
+       }
         
-		public function request_phl(){
-            $this->load->view('dashboard/header_3');
-            $this->load->view('dashboard/request_phl');
-            $this->load->view('dashboard/footer');
-	   }
-	   
         public function pengajuan_skripsi(){
             $this->load->model('models_dosen');
             $hasil = $this->models_dosen->getalldosen();
@@ -59,10 +81,19 @@ class Pages extends CI_Controller {
             $this->load->model('models_dosen');
             $hasil = $this->models_dosen->getalldosen();
             
-            $data = array(
-                'jumlah' => sizeof($hasil),
-                'dosen' => $hasil 
-            );
+            if(isset($_GET['m'])){
+                $data = array(
+                    'ket' => $_GET['m'],
+                    'jumlah' => sizeof($hasil),
+                    'dosen' => $hasil 
+                );
+            }
+            else{
+                $data = array(
+                    'jumlah' => sizeof($hasil),
+                    'dosen' => $hasil 
+                    );
+            }
             
             $this->load->view('dashboard/header_3');
             $this->load->view('dashboard/request_proposal', $data);
@@ -70,8 +101,19 @@ class Pages extends CI_Controller {
 	   }
         
         public function absensi(){
+
+            if(isset($_GET['m'])){
+                $data = array(
+                    'ket' => $_GET['m']
+                );
+            }
+            else{
+                $data = array(
+                    );
+            }
+
             $this->load->view('dashboard/header_3');
-            $this->load->view('dashboard/request_absensi');
+            $this->load->view('dashboard/request_absensi', $data);
             $this->load->view('dashboard/footer');
 	   }
         

@@ -15,7 +15,17 @@
 
         <!-- Main content -->
         <section class="content">
+            <?php 
 
+          if(isset($ket)){
+          echo "
+          <div class='alert alert-success alert-dismissable'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <h4>  <i class='icon fa fa-check'></i> Input Success</h4>
+                    Data sudah terinput dalam database. Silakan lanjutkan pekerjaan anda.
+                  </div>";
+                }
+                  ?>
           <!-- SELECT2 EXAMPLE -->
           	<div class="box box-default">
             <div class="box-header with-border">
@@ -30,7 +40,7 @@
               <div class="col-md-6">
               <div class="form-group">
                 <label>Nama</label>
-               <input name="nama" type="text" class="form-control" value="Noor Iksan SD" disabled>
+               <input name="nama" type="text" class="form-control" value="Rio Ramadhan Dharmawan" disabled>
                 </div>
 				
      		   <form action="<?php echo base_url(); ?>mahasiswa/log_tu_phl/081311633027" method="post">	
@@ -38,7 +48,7 @@
 	          
 			  <div class="form-group">
               <label>No Telp</label>
-              <input name="nomor" type="text" class="form-control" value="081311633035" disabled>
+              <input name="nomor" type="text" class="form-control" value="089678482575" disabled>
       	      </div>
       
 	          <div class="form-group">
@@ -65,54 +75,40 @@
                     <option value="4">4</option>
 					</select>
  					</div>
-					
-                    
-					<div class="form-group">
-                    <label>Hari</label>
-                    <select name="hari" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">--Pilih--</option>
-					<option value="Senin">Senin</option>
-					<option value="Selasa">Selasa</option>
-					<option value="Rabu">Rabu</option>
-					<option value="Kamis">Kamis</option>
-					<option value="Jumat">Jumat</option>
-					<option value="Sabtu">Sabtu</option>
-					</select>
- 					</div>
-					
-					
-					
-					
-                      
-                    
-					
-					
-					
  
-<p>
-  <label for="JUMLAH MAHASISWA">JUMLAH MAHASISWA</label>
-  <input name="jumlah_mahasiswa" type="number" id="JUMLAH MAHASISWA" value="" />
-  <p>
-  <label for="Ruang Sebelum">Ruang Sebelum</label>
-  <input name="ruang_sebelumnya" type="text" id="nomor"  />
-  <p>
-  <label for="Ruang request">Ruang Request</label>
-  <input name="ruang_request" type="text" id="nomor2" value="" />
-  <p>
-   <label for="Jadwal Sebelum">Jadwal Sebelum</label>
-   <input name="jadwal_sebelumnya" type="text" id="nomor3" value="" />
- <p>
- 	<label for="Jadwal Request">Jadwal Request</label> 
-  	<input name="jadwal_request" type="text" id="nomor5" value="" />
-</p>
+  <div class="form-group">
+  <label>Jumlah Mahasiswa</label>
+  <input name="jumlah_mahasiswa" type="number" class="form-control"/>
+  </div>
 
-<p>
-  <input class="btn btn-info pulll-right" type="submit" name="button2" id="button2" value="Jadwal Dosen" />
-  <input class="btn btn-info pulll-right" type="submit" name="button22" id="button22" value="Jadwal Ruangan" />
-</p>
+  <div class="form-group">
+  <label>Ruang Sebelum</label>
+  <input name="ruang_sebelumnya" type="text" class="form-control"/>
+  </div>
+  
+  <div class="form-group">
+  <label>Ruang Request</label>
+  <input name="ruang_request" type="text" class="form-control" />
+  </div>
+  
+  <div class="form-group">
+   <label>Jadwal Sebelum</label>
+   <input name="jadwal_sebelumnya" type="text" class="form-control" />
+   </div>
+
+ <div class="form-group">
+ 	<label>Jadwal Request</label> 
+  	<input name="jadwal_request" type="text" class="form-control" />
+</div>
+
+    <div class="form-group">
+        <a href="#"><input class="btn btn-info pulll-right" value="Jadwal Dosen" /></a>
+        <a href="#"><input class="btn btn-info pulll-right" value="Jadwal Ruangan" /></a>
+    </div>
  
-  <label for="button"></label>
+ <div class="form-group">
   <input type="submit" class="btn btn-info pulll-right" name="button" id="button" value="OK" />
+  </div>
   </form>
  
 

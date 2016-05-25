@@ -15,7 +15,16 @@
 
         <!-- Main content -->
         <section class="content">
-
+            <?php 
+          if(isset($ket)){
+          echo "
+          <div class='alert alert-success alert-dismissable'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <h4>  <i class='icon fa fa-check'></i> Input Success</h4>
+                    Data sudah terinput dalam database. Silakan lanjutkan pekerjaan anda.
+                  </div>";
+                }
+                  ?>
           <!-- SELECT2 EXAMPLE -->
           <div class="box box-default">
             <div class="box-header with-border">
@@ -26,6 +35,7 @@
                 </div>
             </div><!-- /.box-header -->
             <div class="box-body">
+                <form action="<?php echo base_url(); ?>mahasiswa/log_tu_proposal/081311633027" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -50,13 +60,13 @@
                     <!-- textarea -->
                     <div class="form-group">
                       <label>Judul Proposal</label>
-                      <textarea class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      <textarea name="judul" class="form-control" rows="3" placeholder="Text here ..."></textarea>
                     </div> 
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>Topik Proposal</label>
-                      <select class="form-control select2" style="width: 100%;">
+                      <select name="topik" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
                       <option>Data Mining</option>
                       <option>Penelitian Dosen</option>
@@ -70,7 +80,7 @@
                   <div class="col-md-6">
                         <div class="form-group">
                     <label>Dosen Wali</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select name="doswal" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
                       <?php                      
                         for($i=0; $i<$jumlah; $i++){
@@ -83,7 +93,7 @@
                   <div class="col-md-6">
                       <div class="form-group">
                     <label>Dosen Pembimbing 1</label>
-                    <select class="form-control select2" style="width: 100%;">
+                    <select name="dosbing1" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
                       <?php                      
                         for($i=0; $i<$jumlah; $i++){
@@ -94,7 +104,7 @@
                   </div><!-- /.form-group --> 
                     <div class="form-group">
                         <label>Dosen Pembimbing 2</label>
-                        <select class="form-control select2" style="width: 100%;">
+                        <select name="dosbing2" class="form-control select2" style="width: 100%;">
                         <option selected="selected">--Pilih--</option>
                         <?php                      
                         for($i=0; $i<$jumlah; $i++){
@@ -108,6 +118,7 @@
                   </div>
                   </div>
               </div><!-- /.row -->
+              </form>
             </div><!-- /.box-body -->
             <div class="box-footer">
               Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about the plugin.

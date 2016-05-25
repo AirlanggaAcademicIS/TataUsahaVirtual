@@ -15,7 +15,17 @@
 
         <!-- Main content -->
         <section class="content">
+          <?php 
 
+          if(isset($ket)){
+          echo "
+          <div class='alert alert-success alert-dismissable'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <h4>  <i class='icon fa fa-check'></i> Input Success</h4>
+                    Data sudah terinput dalam database. Silakan lanjutkan pekerjaan anda.
+                  </div>";
+                }
+                  ?>
           <!-- SELECT2 EXAMPLE -->
           <div class="box box-default">
             <div class="box-header with-border">

@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a href="<?php echo base_url(); ?>pages/pengajuan_proposal">Request pengajuan proposal</a></li>
                     <li><a href="<?php echo base_url(); ?>pages/pengajuan_skripsi">Request pengajuan skripsi</a></li>
                     <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>pages/request_phl">Request PHL</a></li>
+                    <li><a href="<?php echo base_url(); ?>pages/phl">Request ganti jadwal</a></li>
                     <li class="divider"></li>
                     <li><a href="<?php echo base_url(); ?>pages/other">Other</a></li>
                   </ul>

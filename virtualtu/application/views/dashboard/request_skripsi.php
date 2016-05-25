@@ -37,8 +37,7 @@
                     <input name="nim" type="text" class="form-control" value="081311633027" disabled>
                   </div>  
                 </div><!-- /.col -->
-              
-			    <div class="col-md-6">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label>Telepon</label>
                     <input name="telp" type="text" class="form-control" value="089678482575" disabled>
@@ -73,10 +72,6 @@
                         }
                       ?>
                     </select>
-					<p>
-					
-					</label>
-						</div>
                   </div><!-- /.form-group --> 
                   </div>
                   <div class="col-md-6">
@@ -93,44 +88,15 @@
                   </div><!-- /.form-group --> 
                     <div class="form-group">
                         <label>Dosen Pembimbing 2</label>
-                        <p>
-                          <select name="select" class="form-control select2" style="width: 100%;">
-                            <option selected="selected">--Pilih--</option>
-                            <?php                      
+                        <select class="form-control select2" style="width: 100%;">
+                        <option selected="selected">--Pilih--</option>
+                        <?php                      
                         for($i=0; $i<$jumlah; $i++){
                             echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
                         }
                         ?>
-                          </select>
-						</p>
-						
-                        <div>
-                          <label><br />
-                          <h3>Kelengkapan Mahasiswa : <h3></label>
-                        </div>
-                        <label>
-                        <input name="checkbox" type="checkbox" class="minimal" checked />
-                        </label>
-                       		 Jumlah 140 SKS
-						<p>
-						<label>
-                        <input name="checkbox" type="checkbox" class="minimal" checked />
-                        </label>
-							 Memperoleh minimal 110 SKS dengan IPK >= 2,0
-					  <p>
-					  <label>
-                        <input name="checkbox" type="checkbox" class="minimal" checked />
-                      </label>
-					  		 Lulus mata kuliah metodologi penelitian
-					  <p>
-						<label>
-                        <input name="checkbox" type="checkbox" class="minimal" checked />
-                        </label>
-							 Mendapatkan persetujuan dosen wali
-					  <p>
-						
-						
-                    <!-- /.form-group --> 
+                        </select>
+                    </div><!-- /.form-group --> 
                     <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
                   </div>

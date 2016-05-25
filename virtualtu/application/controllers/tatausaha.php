@@ -89,17 +89,26 @@ class Tatausaha extends CI_Controller {
             else{
                 $this->load->view('login');
             }
-	}	
-
-	public function input_u(){
-		$username = $this->input->post('username');
-
-        $password = $this->input->post('password');
-
-        $this->load->model('m_latihan');
-
-        $insert = $this->m_latihan->input_user($username, $password);
 	}
+        
+        public function gantistatus($id, $status){   
+            
+            if($id==0){
+                
+            }
+            else{
+                $this->load->model('models_log_tu');
+                $hasil = $this->models_log_tu->updatestatus($id, $status);
+            }
+            
+            if($hasil==true){
+                redirect(base_url("tupages/log_mahasiswa"), 'refresh');
+            }
+            else{
+                $this->load->view('tupages/log_mahasiswa');
+            }
+	}
+
 }
 
 /* End of file welcome.php */

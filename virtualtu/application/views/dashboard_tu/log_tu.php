@@ -27,6 +27,7 @@
                         <th>Tanggal Aktivitas</th>
                         <th>Kategori</th>
                         <th>Isi Log</th>
+                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -40,7 +41,13 @@
                                     echo "<td>".$log_tu[$i]['tanggal_log']."</td>";
                                     echo "<td>".$log_tu[$i]['jenis_kategori']."</td>";
                                     echo "<td>".$log_tu[$i]['isi_log']."</td>";
-                                    echo "<td><a href='#'>Detail</a></td>";
+                                    if($log_tu[$i]['status']==0){
+                                        echo "<td><span class='label label-warning'>Belum diproses</span></td>";
+                                    }
+                                    else if($log_tu[$i]['status']==1){
+                                        echo "<td><span class='label label-success'>Sudah diproses</span></td>";
+                                    }
+                                    echo "<td><a href='#'>Detail</a> | <a href='".base_url()."tatausaha/gantistatus/".$log_tu[$i]['id_log_tu']."/1'>Sudah diproses | <a href='".base_url()."tatausaha/gantistatus/".$log_tu[$i]['id_log_tu']."/0'>Belum diproses</a></a></td>";
                                     echo "</tr>";
                                     $i++;
                                 }

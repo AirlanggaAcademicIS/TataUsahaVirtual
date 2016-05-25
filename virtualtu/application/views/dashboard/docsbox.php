@@ -42,14 +42,6 @@
                                 }
                       ?>
                     </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>No</th>
-                        <th>Nama Dokumen</th>
-                        <th>Tanggal Upload</th>
-                        <th>Download</th>
-                      </tr>
-                    </tfoot>
                   </table>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
