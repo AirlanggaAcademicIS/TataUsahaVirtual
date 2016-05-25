@@ -34,6 +34,8 @@ class Models_absensi extends CI_Model {
             'id_log_tu' => $id_log_tu,
             'hari_absen' => $hari_absen,
             'keterangan_absen' => $keterangan_absen
+            'nama_dokter' => $nama_dokter
+            'alamat_dokter' => $alamat_dokter
         );
         return $this->db->insert('absensi', $data);
 

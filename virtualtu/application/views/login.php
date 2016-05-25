@@ -18,6 +18,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/AdminLTE.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/iCheck/square/blue.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +29,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="hold-transition login-page">
+  <body class="hold-transition skin-blue layout-boxed sidebar-mini" >
+  <div class="container">
+    <div class="row">
+      
+      <h2><small>My Carousel</small></h2>
+      
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      	<!-- Carousel Indikator -->
+        <ol class="carousel-indicators">
+        	<li data-target="carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+        
+        <!-- Wrapper for Slide -->
+        <div class="carousel-inner">
+        	<div class="item active">
+            	<img src="img/1a.png" alt="Slide 1">
+                <div class="carousel-caption">
+                	<h3>Label Caption 1</h3>
+                    <p>Lorem Ipsum is simply dummy text</p>
+                </div>
+            </div>
+            <div class="item">
+            	<img src="img/2a.png" alt="Slide 1">
+                <div class="carousel-caption">
+                	<h3>Label Caption 2</h3>
+                    <p>Lorem Ipsum is simply dummy text</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Control -->
+        <a href="#carousel-example-generic" class="carousel-control left" data-slide="prev" role="button">
+        	<span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#carousel-example-generic" class="carousel-control right" data-slide="next" role="button">
+        	<span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <div class="wrapper">
     <div class="login-box">
       <div class="login-logo">
           <b>Tata Usaha Virtual</b>
@@ -46,6 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
             </div><!-- /.col -->
+			
           </div>
         </form>
       </div><!-- /.login-box-body -->
@@ -66,5 +118,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         });
       });
     </script>
+	</div>
   </body>
 </html>
