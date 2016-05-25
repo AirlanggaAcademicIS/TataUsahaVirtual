@@ -12,7 +12,6 @@
             <li>Request Pengajuan Skripsi</li>
           </ol>
         </section>
-
         <!-- Main content -->
         <section class="content">
 
@@ -128,7 +127,6 @@
                         </label>
 							 Mendapatkan persetujuan dosen wali
 					  <p>
-						
 						
                     <!-- /.form-group --> 
                     <div class="form-group">

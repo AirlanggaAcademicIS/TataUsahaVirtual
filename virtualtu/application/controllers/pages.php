@@ -94,6 +94,11 @@ class Pages extends CI_Controller {
             $this->load->view('dashboard/docsbox', $data);
             $this->load->view('dashboard/footer');
 	}	
+	 public function cobayuk(){
+            $this->load->view('dashboard/header_3');
+            $this->load->view('dashboard/cobayuuk');
+            $this->load->view('dashboard/footer');
+        }
 }
 
 /* End of file welcome.php */
