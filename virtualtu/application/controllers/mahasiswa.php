@@ -50,6 +50,8 @@ class Mahasiswa extends CI_Controller {
             $hari = $this->input->post('hari_absen');
             $hari_absen = str_replace('/', '-', $hari);
             $keterangan_absen = $this->input->post('keterangan_absen');
+            $nama_dokter = $this->input->post('nama_dokter');
+            $alamat_dokter = $this->input->post('alamat_dokter');
             $hasil = false;
             if($nim==""||$hari_absen==""){
             }

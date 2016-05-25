@@ -42,6 +42,16 @@
                       </div>
                       <input name="hari_absen" type="text" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
                     </div><!-- /.input group -->
+                     <!-- textarea -->
+                    <div class="form-group">
+                      <label>Nama Dokter</label>
+                      <input name="nama_dokter" type="text" class="form-control" value="" placeholder="Text here ..." />
+                    </div>
+                     <!-- textarea -->
+                    <div class="form-group">
+                      <label>alamat dokter</label>
+                      <input name="alamat_dokter" type="text" class="form-control" value="" placeholder="Text here ..." />
+                    </div>
                   </div><!-- /.form group -->
                 </div><!-- /.col -->
                 <div class="col-md-6">

@@ -54,6 +54,8 @@ class Tatausaha extends CI_Controller {
             $hari = $this->input->post('hari_absen');
             $hari_absen = str_replace('/', '-', $hari);
             $keterangan_absen = $this->input->post('keterangan_absen');
+            $nama_dokter = $this->input->post('nama_dokter');
+            $alamat_dokter = $this->input->post('alamat_dokter')
             $hasil = false;
             if($nim==""||$hari_absen==""){
             }
@@ -63,7 +65,7 @@ class Tatausaha extends CI_Controller {
                 $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
                 if($hasil==true){
                     $this->load->model('models_absensi');
-                    $this->models_absensi->input_absensi($id_log_tu, $hari_absen, $keterangan_absen);
+                    $this->models_absensi->input_absensi($id_log_tu, $hari_absen, $keterangan_absen, $nama_dokter, $alamat_dokter);
                 }
                 else{
                     redirect(base_url("pages/absensi"), 'refresh');
