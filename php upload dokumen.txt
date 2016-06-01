@@ -1,0 +1,41 @@
+<?php
+
+$uploaddir = 'data/';
+$fileName = $_FILES['userfile']['name'];
+$tmpName = $_FILES['userfile']['tmp_name'];
+$fileSize = $_FILES['userfile']['size'];
+$fileType = $_FILES['userfile']['type'];
+$fileError = $_FILES['userfile']['error'];
+$uploadfile = $uploaddir . $fileName;
+mysql_connect('localhost','root','');
+mysql_select_db('upload');
+
+if($fileSize > 0 || $fileError == 0){
+    $move = move_uploaded_file($_FILES['userfile']['tmp_name'],$uploadfile);
+    if($move){
+        echo "<br><h3>Proses Upload Berhasil </h3>";
+        echo "<a href='list.php' >Daftar File</a>  <a href='FormUpload.php'>Form Upload</a>";
+
+        $q = "INSERT into file (name, size, type, lokasi) VALUES ('$fileName', '$fileSize', '$fileType','data/$fileName')";
+        $result = mysql_query($q);
+
+        $q1 = "SELECT lokasi from file where name = '$fileName' limit 1 ";
+        $result = mysql_query($q1);
+
+        while ($data = mysql_fetch_array($result)) {
+            $loc = $data['lokasi']; ?>
+            <br/>
+            <h2> Tampilan File/Gambar Yang Anda Upload : </h2>
+            <img src="<?php echo $loc; ?>" />
+
+            <?php
+        }
+    }
+    else {
+        echo "<h3>Gagal! </h3>";
+    }
+}
+else {
+    echo "Gagal Untuk Mengupload : ".$fileError;
+}
+?>
