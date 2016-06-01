@@ -29,11 +29,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="hold-transition skin-blue layout-boxed sidebar-mini" >
+  <body class="hold-transition skin-blue layout-boxed sidebar-mini">
+  <div class="control-sidebar-bg"></div>
   <div class="container">
     <div class="row">
-      
-      <h2><small>My Carousel</small></h2>
       
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       	<!-- Carousel Indikator -->
@@ -45,19 +44,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Wrapper for Slide -->
         <div class="carousel-inner">
         	<div class="item active">
-            	<img src="img/1a.png" alt="Slide 1">
+            	<img src="assets/img/1a.png" alt="Slide 1" width="1100px">
                 <div class="carousel-caption">
-                	<h3>Label Caption 1</h3>
-                    <p>Lorem Ipsum is simply dummy text</p>
+                	<h3>Rumah Sakit Universitas Airlangga</h3>
                 </div>
             </div>
             <div class="item">
-            	<img src="img/2a.png" alt="Slide 1">
+            	<img src="assets/img/2a.png" alt="Slide 1" width="1000px">
                 <div class="carousel-caption">
-                	<h3>Label Caption 2</h3>
-                    <p>Lorem Ipsum is simply dummy text</p>
+                	<h3>Rektorat Universitas Airlangga</h3>
                 </div>
-            </div>
+			</div>
+            <div class="item">
+            	<img src="assets/img/3a.png" alt="Slide 1" width="2300px">
+                <div class="carousel-caption">
+                	<h3>Lambang Universitas Airlangga</h3>
+                </div>
+				</div>
+			</div>
         </div>
         
         <!-- Control -->
@@ -67,8 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <a href="#carousel-example-generic" class="carousel-control right" data-slide="next" role="button">
         	<span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-      </div>
-      
+      </div> 
     </div>
   </div>
 
@@ -77,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Latest compiled and minified JavaScript --> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-  <div class="wrapper">
+   <div class="col-mid-4">
     <div class="login-box">
       <div class="login-logo">
           <b>Tata Usaha Virtual</b>
@@ -97,11 +100,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-xs-4">
               <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
             </div><!-- /.col -->
-			
-          </div>
+	
         </form>
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
+	</div>
 
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
