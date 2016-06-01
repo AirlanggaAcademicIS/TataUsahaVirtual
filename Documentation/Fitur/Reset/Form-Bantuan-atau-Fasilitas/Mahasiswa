@@ -1,0 +1,23 @@
+	<td width="0%">Deskripsi Keperluan (*)</td>
+						<td><textarea rows="5" name="cari" required cols="25"></textarea></td>
+					</tr>
+					<tr>
+						<td width="0%"><br><br>
+							<a href="#">Home</a> > <a href="#">Keperluan</a> > <a href="#">Detail Keperluan</a></td>
+						<td></td><td></td>
+						
+									<input type="reset" value="   Reset   " name </td>
+						
+					</tr>
+                    </thead>
+                    <tbody>
+                    	
+                    </tbody>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+</body>
+</html>
