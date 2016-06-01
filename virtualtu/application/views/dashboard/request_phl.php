@@ -62,6 +62,13 @@
               <option selected="selected">--Pilih--</option>
 			  <option value="SPK">SPK</option>
               <option value="RPL">RPL</option>
+			  <option value="METPEN">METPEN</option>
+			  <option value="PSI">PSI</option>
+			  <option value="SIG">SIG</option>
+			  <option value="AUDIT">AUDIT</option>
+			  <option value="STKI">STKI</option>
+			  <option value="PSDP">PSDP</option>
+			  <option value="AI">AI</option>
 	          </select>
  			  </div>
 					
@@ -73,6 +80,19 @@
 					<option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
+					</select>
+ 					</div>
+					
+					<div class="form-group">
+                    <label>Hari</label>
+                    <select name="hari" class="form-control select2" style="width: 100%;">
+                    <option selected="selected">--Pilih--</option>
+					<option value="Senin">Senin</option>
+                    <option value="Selasa">Selasa</option>
+                    <option value="Rabu">Rabu</option>
+					<option value="Kamis">Kamis</option>
+					<option value="Jumat">Jumat</option>
+					<option value="Sabtu">Sabtu</option>
 					</select>
  					</div>
  

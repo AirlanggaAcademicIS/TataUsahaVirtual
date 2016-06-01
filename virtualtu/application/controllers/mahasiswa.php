@@ -113,6 +113,7 @@ class Mahasiswa extends CI_Controller {
             $ruang_request = $this->input->post('ruang_request');
             $jadwal_sebelumnya = $this->input->post('jadwal_sebelumnya');
             $jadwal_request = $this->input->post('jadwal_request');
+			$hari = $this->input->post('hari');
             $hasil = false;
             if($nim==""||$mata_kuliah==""){
             }
@@ -122,7 +123,7 @@ class Mahasiswa extends CI_Controller {
                 $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
                 if($hasil==true){
                     $this->load->model('models_phl');
-                    $this->models_phl->input_phl($id_log_tu, $mata_kuliah, $jumlah_sks, $jumlah_mahasiswa, $ruang_sebelumnya, $ruang_request, $jadwal_sebelumnya, $jadwal_request);
+                    $this->models_phl->input_phl($id_log_tu, $mata_kuliah, $jumlah_sks, $jumlah_mahasiswa, $ruang_sebelumnya, $ruang_request, $jadwal_sebelumnya, $jadwal_request, $hari);
                     redirect(base_url("pages/phl?m=success-input"), 'refresh');
                 }
                 else{
