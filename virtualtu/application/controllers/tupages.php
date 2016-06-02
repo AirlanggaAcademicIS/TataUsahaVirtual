@@ -55,6 +55,48 @@ class Tupages extends CI_Controller {
             $this->load->view('dashboard_tu/docsbox', $data);
             $this->load->view('dashboard_tu/footer');
 	}	
+        
+        public function detail($id){   
+            $this->load->model('models_log_tu');
+            $log_tu = $this->models_log_tu->getlog($id);
+            
+            if($log_tu['id_kategori_log']==1){
+                $this->load->model('models_absensi');
+                $hasil = $this->models_absensi->getabsensi($id);
+                
+                $data = array(
+                    'jumlah' => sizeof($hasil),
+                    'absensi' => $hasil 
+                );
+                
+                $this->load->view('dashboard_tu/header_3');
+                $this->load->view('dashboard_tu/request_absensi', $data);
+                $this->load->view('dashboard_tu/footer');
+            }
+            else if($log_tu['id_kategori_log']==2){
+                $this->load->model('models_bantuan');
+                $hasil = $this->models_bantuan->getbantuan($id);
+                
+                $data = array(
+                    'jumlah' => sizeof($hasil),
+                    'bantuan' => $hasil 
+                );
+                
+                $this->load->view('dashboard_tu/header_3');
+                $this->load->view('dashboard_tu/request_bantuan', $data);
+                $this->load->view('dashboard_tu/footer');
+            }
+            else if($log_tu['id_kategori_log']==3){
+                $this->load->view('dashboard_tu/header_3');
+                $this->load->view('dashboard/request_proposal');
+                $this->load->view('dashboard_tu/footer');
+            }
+            else if($log_tu['id_kategori_log']==4){
+                $this->load->view('dashboard_tu/header_3');
+                $this->load->view('dashboard/request_phl');
+                $this->load->view('dashboard_tu/footer');
+            }
+	}
 }
 
 /* End of file welcome.php */

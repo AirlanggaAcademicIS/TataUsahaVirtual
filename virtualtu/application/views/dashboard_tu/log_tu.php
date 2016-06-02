@@ -47,7 +47,7 @@
                                     else if($log_tu[$i]['status']==1){
                                         echo "<td><span class='label label-success'>Sudah diproses</span></td>";
                                     }
-                                    echo "<td><a href='#'>Detail</a> | <a href='".base_url()."tatausaha/gantistatus/".$log_tu[$i]['id_log_tu']."/1'>Sudah diproses | <a href='".base_url()."tatausaha/gantistatus/".$log_tu[$i]['id_log_tu']."/0'>Belum diproses</a></a></td>";
+                                    echo "<td><a href='".base_url()."tupages/detail/".$log_tu[$i]['id_log_tu']."'>Detail</a> | <a href='".base_url()."tatausaha/gantistatus/".$log_tu[$i]['id_log_tu']."/1'>Sudah diproses | <a href='".base_url()."tatausaha/gantistatus/".$log_tu[$i]['id_log_tu']."/0'>Belum diproses</a></a></td>";
                                     echo "</tr>";
                                     $i++;
                                 }

@@ -59,5 +59,25 @@ class Models_log_tu extends CI_Model {
         }
         return $log_tu;
     }
+    
+    function getlog($id){
+        $this->db->where('id_log_tu', $id);
+        $query = $this->db->get('log_tu');
+        
+        $i = 0;
+        foreach ($query->result_array() as $row)
+        {
+            $log_tu['id_log_tu'] = $row['id_log_tu'];
+            $log_tu['nim'] = $row['nim'];
+            $log_tu['tanggal_log'] = $row['tanggal_log'];
+            $log_tu['id_kategori_log'] = $row['id_kategori_log'];
+            $log_tu['isi_log'] = $row['isi_log'];
+            $log_tu['status'] = $row['status'];
+            
+            $i++;
+        }
+        
+        return $log_tu;
+    }
 
 }
