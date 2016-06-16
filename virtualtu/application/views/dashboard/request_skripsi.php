@@ -88,14 +88,34 @@
                   </div><!-- /.form-group --> 
                     <div class="form-group">
                         <label>Dosen Pembimbing 2</label>
-                        <select class="form-control select2" style="width: 100%;">
-                        <option selected="selected">--Pilih--</option>
-                        <?php                      
+                        <p>
+                          <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">--Pilih--</option>
+                            <?php                      
                         for($i=0; $i<$jumlah; $i++){
                             echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
                         }
                         ?>
-                        </select>
+                          </select>
+                        </p>
+                        <p>Syarat pengajuan sidang skripsi :</p>
+                        <p>
+                          <input type="checkbox" name="Hard copy proposal" id="Hard copy proposal" />
+                          <label for="Hard copy proposal">Hard copy proposal</label>
+                        </p>
+                        <p>
+                          <input type="checkbox" name="Kartu konsultasi proposal skripsi" id="Kartu konsultasi proposal skripsi" />
+                          <label for="Kartu konsultasi proposal skripsi">Kartu konsultasi proposal skripsi</label>
+                        </p>
+                        <p>
+                          <input type="checkbox" name="Surat persetujuan dosen wali penyusunan proposal skripsi" id="Surat persetujuan dosen wali penyusunan proposal skripsi" />
+                          <label for="Surat persetujuan dosen wali penyusunan proposal skripsi">Surat persetujuan dosen wali penyusunan proposal skripsi</label>
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                          <input type="checkbox" name="sertifikat toefl" id="sertifikat toefl" />
+                          <label for="sertifikat toefl">Sertifikat toefl</label>
+                        </form>
+                        <p>&nbsp;</p>
                     </div><!-- /.form-group --> 
                     <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
