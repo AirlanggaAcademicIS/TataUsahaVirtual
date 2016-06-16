@@ -116,6 +116,10 @@
                           <input type="checkbox" name="Surat persetujuan dosen wali penyusunan proposal skripsi" id="Surat persetujuan dosen wali penyusunan proposal skripsi" />
                           <label for="Surat persetujuan dosen wali penyusunan proposal skripsi">Surat persetujuan dosen wali penyusunan proposal skripsi</label>
                         </p>
+                         <div class="form-group">
+        <a href="#"><input class="btn btn-info pulll-right" value="Jadwal Dosen" /></a>
+        <a href="#"><input class="btn btn-info pulll-right" value="Jadwal Ruangan" /></a>
+    </div>
                     </div><!-- /.form-group --> 
                     <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
