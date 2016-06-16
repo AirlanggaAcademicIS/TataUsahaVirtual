@@ -60,7 +60,9 @@
                     <!-- textarea -->
                     <div class="form-group">
                       <label>Judul Proposal</label>
-                      <textarea name="judul" class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      <p>
+                        <textarea name="judul" class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      </p>
                     </div> 
                   </div>
                   <div class="col-md-6">
@@ -104,18 +106,37 @@
                   </div><!-- /.form-group --> 
                     <div class="form-group">
                         <label>Dosen Pembimbing 2</label>
-                        <select name="dosbing2" class="form-control select2" style="width: 100%;">
-                        <option selected="selected">--Pilih--</option>
-                        <?php                      
+                        <p>
+                          <select name="dosbing2" class="form-control select2" style="width: 100%;">
+                            <option selected="selected">--Pilih--</option>
+                            <?php                      
                         for($i=0; $i<$jumlah; $i++){
                             echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
                         }
                         ?>
-                        </select>
-                    </div><!-- /.form-group --> 
+                          </select>
+                        </p>
+                        <p>Syarat pengajuan sidang proposal :</p>
+                        <p>
+                          <input type="checkbox" name="Hard copy proposal" id="Hard copy proposal" />
+                          <label for="Hard copy proposal">Hard copy proposal</label>
+                        </p>
+                        <p>
+                          <input type="checkbox" name="Kartu konsultasi proposal skripsi" id="Kartu konsultasi proposal skripsi" />
+                          <label for="Kartu konsultasi proposal skripsi">Kartu konsultasi proposal skripsi</label>
+                        </p>
+                        <p>
+                          <input type="checkbox" name="Surat persetujuan dosen wali penyusunan proposal skripsi" id="Surat persetujuan dosen wali penyusunan proposal skripsi" />
+                          <label for="Surat persetujuan dosen wali penyusunan proposal skripsi">Surat persetujuan dosen wali penyusunan proposal skripsi</label>
+                        </p>
+                    </div>
+                    <!-- /.form-group --> 
                     <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
-                  </div>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                    </div>
                   </div>
               </div><!-- /.row -->
               </form>
