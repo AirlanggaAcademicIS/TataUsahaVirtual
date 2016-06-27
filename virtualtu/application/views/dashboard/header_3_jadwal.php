@@ -16,6 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap.css">
+    <!-- fullCalendar 2.2.5-->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fullcalendar/fullcalendar.print.css" media="print">
     <!-- Select2 -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/select2/select2.min.css">
     <!-- Theme style -->
@@ -51,8 +54,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
               <ul class="nav navbar-nav">
                 <li><a href="<?php echo base_url(); ?>pages">Home <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="<?php echo base_url(); ?>pages/docs_box">Documents Shared</a></li>
-                <li class="dropdown">
+                <li><a href="<?php echo base_url(); ?>pages/docs_box">Shared Documents</a></li>
+                <li class="active">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Virtual Service <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo base_url(); ?>pages/absensi">Request surat izin absensi</a></li>

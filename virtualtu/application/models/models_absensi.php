@@ -7,7 +7,7 @@ class Models_absensi extends CI_Model {
     } 
     
     function getabsensi($id){
-        $sql = "SELECT a.id_presensi, a.id_log_tu , a.hari_absen, a.keterangan_absen, l.nim, l.tanggal_log, l.isi_log, m.nama_mahasiswa FROM absensi a, log_tu l, mahasiswa m WHERE a.id_log_tu = l.id_log_tu AND a.id_log_tu = ".$id." AND m.nim = l.nim";
+        $sql = "SELECT a.id_presensi, a.id_log_tu , a.hari_absen, a.keterangan_absen, l.nim, l.tanggal_log, l.isi_log, m.nama_mahasiswa, m.email FROM absensi a, log_tu l, mahasiswa m WHERE a.id_log_tu = l.id_log_tu AND a.id_log_tu = ".$id." AND m.nim = l.nim";
         $query = $this->db->query($sql);
         
         $i = 0;
@@ -21,6 +21,7 @@ class Models_absensi extends CI_Model {
             $hasil['nama_mahasiswa'] = $row['nama_mahasiswa'];
             $hasil['tanggal_log'] = $row['tanggal_log'];
             $hasil['isi_log'] = $row['isi_log'];
+            $hasil['email'] = $row['email'];
             
             $i++;
         }

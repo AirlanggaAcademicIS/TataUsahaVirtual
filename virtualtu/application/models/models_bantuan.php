@@ -7,7 +7,7 @@ class Models_bantuan extends CI_Model {
     } 
     
     function getbantuan($id){
-        $sql = "SELECT b.id_bantuan, b.id_log_tu , d.nama_dosen, b.kepada_bagian, b.deskripsi, l.nim, l.tanggal_log, l.isi_log, m.nama_mahasiswa FROM bantuan_fasilitas b, log_tu l, mahasiswa m, dosen d WHERE b.id_log_tu = l.id_log_tu AND b.id_log_tu = ".$id." AND m.nim = l.nim AND d.id_dosen = b.dosen_wali";
+        $sql = "SELECT b.id_bantuan, b.id_log_tu , d.nama_dosen, b.kepada_bagian, b.deskripsi, l.nim, l.tanggal_log, l.isi_log, m.nama_mahasiswa, m.email FROM bantuan_fasilitas b, log_tu l, mahasiswa m, dosen d WHERE b.id_log_tu = l.id_log_tu AND b.id_log_tu = ".$id." AND m.nim = l.nim AND d.id_dosen = b.dosen_wali";
         $query = $this->db->query($sql);
         
         $i = 0;
@@ -22,6 +22,7 @@ class Models_bantuan extends CI_Model {
             $hasil['isi_log'] = $row['isi_log'];
             $hasil['kepada_bagian'] = $row['kepada_bagian'];
             $hasil['deskripsi'] = $row['deskripsi'];
+            $hasil['email'] = $row['email'];
             
             $i++;
         }

@@ -23,6 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/skins/_all-skins.min.css">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/img/favicon.png" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li class="active"><a href="<?php echo base_url(); ?>pages">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="<?php echo base_url(); ?>pages/docs_box">Documents Shared</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log TU <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Virtual Service <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo base_url(); ?>pages/absensi">Request surat izin absensi</a></li>
                     <li><a href="<?php echo base_url(); ?>pages/bantuan_fasilitas">Request surat bantuan fasilitas</a></li>
@@ -60,8 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a href="<?php echo base_url(); ?>pages/pengajuan_skripsi">Request pengajuan skripsi</a></li>
                     <li class="divider"></li>
                     <li><a href="<?php echo base_url(); ?>pages/phl">Request ganti jadwal</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<?php echo base_url(); ?>pages/other">Other</a></li>
+                    <!-- <li class="divider"></li>
+                    <li><a href="<?php echo base_url(); ?>pages/other">Other</a></li> -->
                   </ul>
                 </li>
               </ul>
@@ -74,17 +76,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <!-- The user image in the navbar-->
-                      <img src="<?php echo base_url(); ?>assets/img/myprofile.png" class="user-image" alt="User Image">
+                      <img src="<?php echo base_url(); ?>assets/img/logo_vase.png" class="user-image" alt="User Image">
                       <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                      <span class="hidden-xs">Rio Ramadhan Dharmawan</span>
+                      <span class="hidden-xs"><?php echo $nama_mahasiswa; ?></span>
                     </a>
                     <ul class="dropdown-menu">
                       <!-- The user image in the menu -->
                       <li class="user-header">
-                        <img src="<?php echo base_url(); ?>assets/img/myprofile.png" class="img-circle" alt="User Image">
+                        <img src="<?php echo base_url(); ?>assets/img/logo_vase.png" class="img-circle" alt="User Image">
                         <p>
-                          Rio Ramadhan Dharmawan <br>Mahasiswa
-                          <small>Member since Nov. 2016</small>
+                          <?php echo $nama_mahasiswa; ?> <br> <?php echo $nim;?>
+                          <small>Mahasiswa</small>
                         </p>
                       </li>
                       <!-- Menu Footer-->
@@ -93,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <a href="#" class="btn btn-default btn-flat">Profile</a>
                         </div>-->
                         <div class="pull-right">
-                          <a href="<?php echo base_url(); ?>account" class="btn btn-default btn-flat">Sign out</a>
+                          <a href="<?php echo base_url(); ?>account/logout" class="btn btn-default btn-flat">Sign out</a>
                         </div>
                       </li>
                     </ul>

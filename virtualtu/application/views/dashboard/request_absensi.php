@@ -37,11 +37,11 @@
             </div><!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                  <form action="<?php echo base_url(); ?>mahasiswa/log_tu_absensi/081311633027" method="post">
+                  <form action="<?php echo base_url()."mahasiswa/log_tu_absensi/".$nim; ?>" method="post">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nama</label>
-                    <input name="nama" type="text" class="form-control" value="Rio Ramadhan Dharmawan" disabled>
+                    <input name="nama" type="text" class="form-control" value="<?php echo $nama_mahasiswa;?>" disabled>
                   </div> 
                    <!-- Date dd/mm/yyyy -->
                   <div class="form-group">
@@ -52,27 +52,17 @@
                       </div>
                       <input name="hari_absen" type="text" class="form-control" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask>
                     </div><!-- /.input group -->
-                     <!-- textarea -->
-                    <div class="form-group">
-                      <label>Nama Dokter</label>
-                      <input name="nama_dokter" type="text" class="form-control" value="" placeholder="Text here ..." />
-                    </div>
-                     <!-- textarea -->
-                    <div class="form-group">
-                      <label>alamat dokter</label>
-                      <input name="alamat_dokter" type="text" class="form-control" value="" placeholder="Text here ..." />
-                    </div>
                   </div><!-- /.form group -->
                 </div><!-- /.col -->
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nim</label>
-                    <input id="nim" name="nim" type="text" class="form-control" value="081311633027" disabled>
+                    <input id="nim" name="nim" type="text" class="form-control" value="<?php echo $nim;?>" disabled>
                   </div> 
                   <!-- textarea -->
                     <div class="form-group">
                       <label>Keterangan Absen</label>
-                      <textarea name="keterangan_absen" class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      <textarea name="keterangan_absen" class="form-control" rows="7" placeholder="<?php echo "Tuliskan tanggal anda tidak mengikuti perkuliahan. (Jam, tanggal, matakuliah)\nTuliskan alasan anda tidak mengikuti perkuliahan secara lengkap dan jelas.\n\nContoh:\nPada tanggal 21/06/2016 matakuliah PSI\nSaya izin untuk tidak mengikuti perkuliahan karena sebab sakit radang tenggorokan yang dirawat di RS Husana dirawat oleh dokter Ramelan."; ?>" class="form-control" value="<?php echo $nim;?>"></textarea>
                     </div>
                   <div class="form-group">
                   <button type="submit" class="btn btn-info pull-right">Submit</button>
@@ -82,7 +72,7 @@
               </div><!-- /.row -->
             </div><!-- /.box-body -->
             <div class="box-footer">
-              Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about the plugin.
+              Note : Jika ada yang kurang jelas silakan menghubungi TU yang sedang bertugas berjaga.
             </div>
           </div><!-- /.box -->
 

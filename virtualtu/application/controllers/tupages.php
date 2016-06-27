@@ -21,28 +21,52 @@ class Tupages extends CI_Controller {
         function Tupages() { 
             parent::__construct();
             $this->load->helper('url');
+            $this->load->library('session');
         }
         
         public function index(){
-            $this->load->view('dashboard_tu/header_1');
+            $data_header = $this->getsess();
+            
+            $this->load->view('dashboard_tu/header_1', $data_header);
             $this->load->view('dashboard_tu/home');
             $this->load->view('dashboard_tu/footer');
         }
+        
+        private function getsess(){
+            if($this->session->userdata('ptu')){
+                $session = $this->session->userdata('ptu');
+            }
+            else{
+                redirect(base_url("?m=notallow"), 'refresh');
+            }
+            
+            $data = array(
+                    'nip' => $session['nip'],
+                    'nama_tu' => $session['nama_tu'],
+                    'email' => $session['email'] 
+                );
+            
+            return $data;
+        }
            
         public function log_mahasiswa(){
+            $data_header = $this->getsess();
+            
             $this->load->model('models_log_tu');
             $hasil = $this->models_log_tu->getall();
             
             $data = array(
                 'jumlah' => sizeof($hasil),
-                'log_tu' => $hasil 
+                'log_tu' => $hasil
             );
-            $this->load->view('dashboard_tu/header_3');
+            $this->load->view('dashboard_tu/header_3', $data_header);
             $this->load->view('dashboard_tu/log_tu', $data);
             $this->load->view('dashboard_tu/footer');
         }
 
-        public function docs_box(){   
+        public function docs_box(){ 
+            $data_header = $this->getsess();
+            
             $this->load->model('models_document');
             $hasil = $this->models_document->getAllDocument();
             
@@ -51,12 +75,14 @@ class Tupages extends CI_Controller {
                 'documents' => $hasil 
             );
             
-            $this->load->view('dashboard_tu/header_2');
+            $this->load->view('dashboard_tu/header_2', $data_header);
             $this->load->view('dashboard_tu/docsbox', $data);
             $this->load->view('dashboard_tu/footer');
 	}	
         
         public function detail($id){   
+            $data_header = $this->getsess();
+            
             $this->load->model('models_log_tu');
             $log_tu = $this->models_log_tu->getlog($id);
             
@@ -69,7 +95,7 @@ class Tupages extends CI_Controller {
                     'absensi' => $hasil 
                 );
                 
-                $this->load->view('dashboard_tu/header_3');
+                $this->load->view('dashboard_tu/header_3', $data_header);
                 $this->load->view('dashboard_tu/request_absensi', $data);
                 $this->load->view('dashboard_tu/footer');
             }
@@ -82,18 +108,47 @@ class Tupages extends CI_Controller {
                     'bantuan' => $hasil 
                 );
                 
-                $this->load->view('dashboard_tu/header_3');
+                $this->load->view('dashboard_tu/header_3', $data_header);
                 $this->load->view('dashboard_tu/request_bantuan', $data);
                 $this->load->view('dashboard_tu/footer');
             }
             else if($log_tu['id_kategori_log']==3){
-                $this->load->view('dashboard_tu/header_3');
-                $this->load->view('dashboard/request_proposal');
+                $this->load->model('models_proposal');
+                $hasil = $this->models_proposal->getproposaldetail($id);
+                
+                $data = array(
+                    'jumlah' => sizeof($hasil),
+                    'p_proposal' => $hasil 
+                );
+                
+                $this->load->view('dashboard_tu/header_3', $data_header);
+                $this->load->view('dashboard_tu/request_proposal', $data);
                 $this->load->view('dashboard_tu/footer');
             }
             else if($log_tu['id_kategori_log']==4){
-                $this->load->view('dashboard_tu/header_3');
-                $this->load->view('dashboard/request_phl');
+                $this->load->model('models_phl');
+                $hasil = $this->models_phl->getphl($id);
+                
+                $data = array(
+                    'jumlah' => sizeof($hasil),
+                    'gantijadwal' => $hasil 
+                );
+
+                $this->load->view('dashboard_tu/header_3', $data_header);
+                $this->load->view('dashboard_tu/request_phl', $data);
+                $this->load->view('dashboard_tu/footer');
+            }
+            else if($log_tu['id_kategori_log']==5){
+                $this->load->model('models_skripsi');
+                $hasil = $this->models_skripsi->getskripsidetail($id);
+                
+                $data = array(
+                    'jumlah' => sizeof($hasil),
+                    'p_skripsi' => $hasil 
+                );
+                
+                $this->load->view('dashboard_tu/header_3', $data_header);
+                $this->load->view('dashboard_tu/request_skripsi', $data);
                 $this->load->view('dashboard_tu/footer');
             }
 	}

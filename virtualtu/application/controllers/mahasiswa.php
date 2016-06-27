@@ -51,8 +51,6 @@ class Mahasiswa extends CI_Controller {
             $hari = $this->input->post('hari_absen');
             $hari_absen = str_replace('/', '-', $hari);
             $keterangan_absen = $this->input->post('keterangan_absen');
-            $nama_dokter = $this->input->post('nama_dokter');
-            $alamat_dokter = $this->input->post('alamat_dokter');
             $hasil = false;
             if($nim==""||$hari_absen==""){
             }
@@ -78,31 +76,111 @@ class Mahasiswa extends CI_Controller {
             $doswal = $this->input->post('doswal');
             $dosbing1 = $this->input->post('dosbing1');
             $dosbing2 = $this->input->post('dosbing2');
+            
+            $syarat = 0;
+            if($this->input->post('s1')=="on")
+                $syarat++;
+            if($this->input->post('s2')=="on")
+                $syarat++;
+            if($this->input->post('s3')=="on")
+                $syarat++;
+            if($this->input->post('s4')=="on")
+                $syarat++;
+            if($this->input->post('s5')=="on")
+                $syarat++;
+            if($this->input->post('s6')=="on")
+                $syarat++;
+            if($this->input->post('s7')=="on")
+                $syarat++;
+            if($this->input->post('s8')=="on")
+                $syarat++;
+            if($this->input->post('s9')=="on")
+                $syarat++;
 
             $hasil = false;
             if($nim=="" || $judul=="" || $topik=="" || $doswal==0 || $dosbing1==0 || $dosbing2==0){
+                redirect(base_url("pages/pengajuan_proposal?m=not-full"), 'refresh');
             }
             else{
-                $this->load->model('models_log_tu');
-                $hasil = $this->models_log_tu->input_log_tu($nim, $tanggal, 3, "");
-                $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
-                if($hasil==true){
-                    $this->load->model('models_proposal');
-                    $hasil2 = $this->models_proposal->input_proposal($nim, $judul, $doswal, $dosbing1, $dosbing2);
-                    $id_proposal_skripsi = $this->models_proposal->getproposal($nim, $judul);
-                    if($hasil2==true){
-                        $this->models_proposal->input_pengajuan_proposal($id_log_tu, $id_proposal_skripsi, $topik);
-                        redirect(base_url("pages/pengajuan_proposal?m=success-input"), 'refresh');
+                if($syarat>=9){
+                    $this->load->model('models_log_tu');
+                    $hasil = $this->models_log_tu->input_log_tu($nim, $tanggal, 3, "");
+                    $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
+                    if($hasil==true){
+                        $this->load->model('models_proposal');
+                        $hasil2 = $this->models_proposal->input_proposal($nim, $judul, $doswal, $dosbing1, $dosbing2);
+                        $id_proposal_skripsi = $this->models_proposal->getproposal($nim, $judul);
+                        if($hasil2==true){
+                            $this->models_proposal->input_pengajuan_proposal($id_log_tu, $id_proposal_skripsi, $topik);
+                            redirect(base_url("pages/pengajuan_proposal?m=success-input"), 'refresh');
+                        }
+                        else{
+                            redirect(base_url("pages/pengajuan_proposal"), 'refresh');
+                        }
                     }
                     else{
                         redirect(base_url("pages/pengajuan_proposal"), 'refresh');
                     }
                 }
                 else{
-                    redirect(base_url("pages/pengajuan_proposal"), 'refresh');
+                    redirect(base_url("pages/pengajuan_proposal?m=not-checked"), 'refresh');
                 }
             } 
-	   }
+        }
+
+       public function log_tu_skripsi($nim){   
+            $tanggal = date('Y-m-d H:i:s');
+            $nilai_toefl = $this->input->post('nilai_toefl');
+            $id_proposal_skripsi = $this->input->post('judul');
+            
+            $syarat = 0;
+            if($this->input->post('s1')=="on")
+                $syarat++;
+            if($this->input->post('s2')=="on")
+                $syarat++;
+            if($this->input->post('s3')=="on")
+                $syarat++;
+            if($this->input->post('s4')=="on")
+                $syarat++;
+            if($this->input->post('s5')=="on")
+                $syarat++;
+            if($this->input->post('s6')=="on")
+                $syarat++;
+            if($this->input->post('s7')=="on")
+                $syarat++;
+            if($this->input->post('s8')=="on")
+                $syarat++;
+            if($this->input->post('s9')=="on")
+                $syarat++;
+            if($this->input->post('s10')=="on")
+                $syarat++;
+            if($this->input->post('s11')=="on")
+                $syarat++;
+            if($this->input->post('s12')=="on")
+                $syarat++;
+
+            $hasil = false;
+            if($nim=="" || $nilai_toefl=="" || $id_proposal_skripsi==0){
+                redirect(base_url("pages/pengajuan_skripsi?m=not-full"), 'refresh');
+            }
+            else{
+                if($syarat>=12){
+                    $this->load->model('models_log_tu');
+                    $hasil = $this->models_log_tu->input_log_tu($nim, $tanggal, 5, "");
+                    $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
+                    if($hasil==true){
+                        $this->models_skripsi->input_pengajuan_skripsi($id_log_tu, $id_proposal_skripsi, $nilai_toefl);
+                        redirect(base_url("pages/pengajuan_skripsi?m=success-input"), 'refresh');
+                    }
+                    else{
+                        redirect(base_url("pages/pengajuan_skripsi"), 'refresh');
+                    }
+                }
+                else{
+                    redirect(base_url("pages/pengajuan_skripsi?m=not-checked"), 'refresh');
+                }
+            } 
+       }
            
            public function log_tu_phl($nim){   
             $tanggal = date('Y-m-d H:i:s');
@@ -113,7 +191,6 @@ class Mahasiswa extends CI_Controller {
             $ruang_request = $this->input->post('ruang_request');
             $jadwal_sebelumnya = $this->input->post('jadwal_sebelumnya');
             $jadwal_request = $this->input->post('jadwal_request');
-			$hari = $this->input->post('hari');
             $hasil = false;
             if($nim==""||$mata_kuliah==""){
             }
@@ -123,7 +200,7 @@ class Mahasiswa extends CI_Controller {
                 $id_log_tu = $this->models_log_tu->getLogTu($nim, $tanggal);
                 if($hasil==true){
                     $this->load->model('models_phl');
-                    $this->models_phl->input_phl($id_log_tu, $mata_kuliah, $jumlah_sks, $jumlah_mahasiswa, $ruang_sebelumnya, $ruang_request, $jadwal_sebelumnya, $jadwal_request, $hari);
+                    $this->models_phl->input_phl($id_log_tu, $mata_kuliah, $jumlah_sks, $jumlah_mahasiswa, $ruang_sebelumnya, $ruang_request, $jadwal_sebelumnya, $jadwal_request);
                     redirect(base_url("pages/phl?m=success-input"), 'refresh');
                 }
                 else{

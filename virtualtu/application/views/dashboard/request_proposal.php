@@ -17,13 +17,33 @@
         <section class="content">
             <?php 
           if(isset($ket)){
-          echo "
-          <div class='alert alert-success alert-dismissable'>
+              if($ket=="success-input"){
+                  echo "
+                  <div class='alert alert-success alert-dismissable'>
+                            <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                            <h4>  <i class='icon fa fa-check'></i> Input Success</h4>
+                            Data sudah terinput dalam database. Silakan lanjutkan pekerjaan anda.
+                          </div>";
+              }
+              else if($ket=="not-checked"){
+                  echo "
+                <div class='alert alert-warning alert-dismissable'>
                     <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-                    <h4>  <i class='icon fa fa-check'></i> Input Success</h4>
-                    Data sudah terinput dalam database. Silakan lanjutkan pekerjaan anda.
-                  </div>";
-                }
+                    <h4><i class='icon fa fa-warning'></i> Warning!</h4>
+                    List yang disediakan perlu dilengkapi terlebih dahulu.
+                  </div>
+                ";
+              }
+              else if($ket=="not-full"){
+                  echo "
+                <div class='alert alert-warning alert-dismissable'>
+                    <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+                    <h4><i class='icon fa fa-warning'></i> Warning!</h4>
+                    Isi lengkap form yang disediakan.
+                  </div>
+                ";
+              }
+          }
                   ?>
           <!-- SELECT2 EXAMPLE -->
           <div class="box box-default">
@@ -35,23 +55,19 @@
                 </div>
             </div><!-- /.box-header -->
             <div class="box-body">
-                <form action="<?php echo base_url(); ?>mahasiswa/log_tu_proposal/081311633027" method="post">
+                <form action="<?php echo base_url()."mahasiswa/log_tu_proposal/".$nim; ?>" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nama</label>
-                    <input name="nama" type="text" class="form-control" value="Rio Ramadhan Dharmawan" disabled>
-                  </div>
-                  <div class="form-group">
-                    <label>Nim</label>
-                    <input name="nim" type="text" class="form-control" value="081311633027" disabled>
-                  </div>  
+                    <input name="nama" type="text" class="form-control" value="<?php echo $nama_mahasiswa;?>" disabled>
+                  </div> 
                 </div><!-- /.col -->
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Telepon</label>
-                    <input name="telp" type="text" class="form-control" value="089678482575" disabled>
-                  </div>                  
+                    <label>Nim</label>
+                    <input name="nim" type="text" class="form-control" value="<?php echo $nim;?>" disabled>
+                  </div> 
                 </div><!-- /.col -->
               </div><!-- /.row -->
               
@@ -60,7 +76,7 @@
                     <!-- textarea -->
                     <div class="form-group">
                       <label>Judul Proposal</label>
-                      <textarea name="judul" class="form-control" rows="3" placeholder="Text here ..."></textarea>
+                      <textarea name="judul" class="form-control" rows="1" placeholder="Text here ..."></textarea>
                     </div> 
                   </div>
                   <div class="col-md-6">
@@ -78,7 +94,7 @@
               </div>
               <div class="row">
                   <div class="col-md-6">
-                        <div class="form-group">
+                     <div class="form-group">
                     <label>Dosen Wali</label>
                     <select name="doswal" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
@@ -88,7 +104,7 @@
                         }
                       ?>
                     </select>
-                  </div><!-- /.form-group --> 
+                  </div><!-- /.form-group -->
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
@@ -112,16 +128,74 @@
                         }
                         ?>
                         </select>
-                    </div><!-- /.form-group --> 
-                    <div class="form-group">
-                  <button type="submit" class="btn btn-info pull-right">Submit</button>
-                  </div>
+                    </div><!-- /.form-group -->  
                   </div>
               </div><!-- /.row -->
+              <div class="row">
+                  <div class="col-md-10">
+                      <div class="form-group">
+                          <label>Sertakan kelengkapan berkas berikut saat mengumpulkan proposal!</label>
+                      </div>
+                      <div class="col-md-5">
+                          <div class="form-group">
+                     <label>
+                      <input name="s1" type="checkbox" class="flat-red"> Pengajuan Usulan topik skripsi
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s2" type="checkbox" class="flat-red"> Pengajuan dosen pembimbing
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s3" type="checkbox" class="flat-red"> Bukti acc Dosen KBK
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s4" type="checkbox" class="flat-red"> Bukti form konsultasi kedua dosbing (min. 10 ttd)
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s5" type="checkbox" class="flat-red"> Bukti form pengajuan proposal (Ter acc)
+                     </label>
+                  </div><!-- /.form-group -->
+                      </div>
+                      <div class="col-md-5">
+                      <div class="form-group">
+                     <label>
+                      <input name="s6" type="checkbox" class="flat-red"> Tiga exemplar proposal (Setelah revisi dosbing)
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s7" type="checkbox" class="flat-red"> KHS semester 1 - semester terakhir pengajuan
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s8" type="checkbox" class="flat-red"> KRS yang memprogram proposal
+                     </label>
+                  </div><!-- /.form-group -->
+                  <div class="form-group">
+                     <label>
+                      <input name="s9" type="checkbox" class="flat-red"> Sudah mengikuti mata kuliah Metode Penelitian
+                     </label>
+                  </div><!-- /.form-group -->
+                  </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-info pull-right">Submit</button>
+                      </div>
+                  </div>
+              </div>
               </form>
             </div><!-- /.box-body -->
             <div class="box-footer">
-              Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about the plugin.
+              Note : Jika ada yang kurang jelas silakan menghubungi TU yang sedang bertugas berjaga.
             </div>
           </div><!-- /.box -->
 

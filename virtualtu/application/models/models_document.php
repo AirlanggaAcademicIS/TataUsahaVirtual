@@ -7,6 +7,7 @@ class Models_document extends CI_Model {
     } 
     
     public function getAllDocument(){
+        $this->db->order_by("tanggal_upload", "desc");
         $query = $this->db->get('dokumen');
         
         $i = 0;
@@ -19,29 +20,6 @@ class Models_document extends CI_Model {
             $i++;
         }
         return $dokumen;
-    }
-
-    function input_user($username, $password){
-        $data = array(
-            'username' => $username,
-            'password' => $password
-        );
-        return $this->db->insert('user', $data);
-
-    }
-
-    function getAllUser() {
-        $query = $this->db->get('user');
-        
-        $i = 0;
-        foreach ($query->result_array() as $row)
-        {
-            $user[$i]['username'] = $row['username'];
-            $user[$i]['password'] = $row['password'];
-            
-            $i++;
-        }
-        return $user;
     }
 
 }

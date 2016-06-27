@@ -15,40 +15,14 @@ class Models_mahasiswa extends CI_Model {
         {
             $user = array(
                 'nim' => $row->nim,
-                'password' => $row->password
+                'password' => $row->password,
+                'nama_mahasiswa' => $row->nama_mahasiswa,
+                'email' => $row->email
             );
             
             $i++;
         }
         
-        if($user['password']==$password){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    function input_user($username, $password){
-        $data = array(
-            'username' => $username,
-            'password' => $password
-        );
-        return $this->db->insert('user', $data);
-
-    }
-
-    function getAllUser() {
-        $query = $this->db->get('user');
-        
-        $i = 0;
-        foreach ($query->result_array() as $row)
-        {
-            $user[$i]['username'] = $row['username'];
-            $user[$i]['password'] = $row['password'];
-            
-            $i++;
-        }
         return $user;
     }
 

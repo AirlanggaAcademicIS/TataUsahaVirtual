@@ -23,7 +23,7 @@ date_default_timezone_set("Asia/Jakarta");
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/TataUsahaVirtual/virtualtu/';
+$config['base_url'] = 'http://localhost/public_html/virtualtu/';
 
 /*
 |--------------------------------------------------------------------------
@@ -233,7 +233,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'tatausahavirtual';
 
 /*
 |--------------------------------------------------------------------------

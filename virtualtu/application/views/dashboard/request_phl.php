@@ -36,111 +36,77 @@
             </div><!-- /.box-header -->
 		    
               <div class="box-body">
+                  <form action="<?php echo base_url()."mahasiswa/log_tu_phl/".$nim; ?>" method="post">
               <div class="row">
-              <div class="col-md-6">
-              <div class="form-group">
-                <label>Nama</label>
-               <input name="nama" type="text" class="form-control" value="Rio Ramadhan Dharmawan" disabled>
-                </div>
-				
-     		   <form action="<?php echo base_url(); ?>mahasiswa/log_tu_phl/081311633027" method="post">	
-			  
-	          
-			  <div class="form-group">
-              <label>No Telp</label>
-              <input name="nomor" type="text" class="form-control" value="089678482575" disabled>
-      	      </div>
-      
-	          <div class="form-group">
-              <label>Nim</label>
-              <input name="nim" type="text" class="form-control" value="081311633027" disabled="disabled" />
-              </div>  
-		
-			  <div class="form-group">
-              <label>Mata Kuliah</label>
-              <select name="mata_kuliah" class="form-control select2" style="width: 100%;">
-              <option selected="selected">--Pilih--</option>
-			  <option value="SPK">SPK</option>
-              <option value="RPL">RPL</option>
-			  <option value="METPEN">METPEN</option>
-			  <option value="PSI">PSI</option>
-			  <option value="SIG">SIG</option>
-			  <option value="AUDIT">AUDIT</option>
-			  <option value="STKI">STKI</option>
-			  <option value="PSDP">PSDP</option>
-			  <option value="AI">AI</option>
-	          </select>
- 			  </div>
-					
-					
-				    <div class="form-group">
-                    <label>Jumlah SKS</label>
-                    <select name="jumlah_sks" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">--Pilih--</option>
-					<option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-					</select>
- 					</div>
-					
-					<div class="form-group">
-                    <label>Hari</label>
-                    <select name="hari" class="form-control select2" style="width: 100%;">
-                    <option selected="selected">--Pilih--</option>
-					<option value="Senin">Senin</option>
-                    <option value="Selasa">Selasa</option>
-                    <option value="Rabu">Rabu</option>
-					<option value="Kamis">Kamis</option>
-					<option value="Jumat">Jumat</option>
-					<option value="Sabtu">Sabtu</option>
-					</select>
- 					</div>
- 
-  <div class="form-group">
-  <label>Jumlah Mahasiswa</label>
-  <input name="jumlah_mahasiswa" type="number" class="form-control"/>
-  </div>
-
-  <div class="form-group">
-  <label>Ruang Sebelum</label>
-  <input name="ruang_sebelumnya" type="text" class="form-control"/>
-  </div>
-  
-  <div class="form-group">
-  <label>Ruang Request</label>
-  <input name="ruang_request" type="text" class="form-control" />
-  </div>
-  
-  <div class="form-group">
-   <label>Jadwal Sebelum</label>
-   <input name="jadwal_sebelumnya" type="text" class="form-control" />
-   </div>
-
- <div class="form-group">
- 	<label>Jadwal Request</label> 
-  	<input name="jadwal_request" type="text" class="form-control" />
-</div>
-
-    <div class="form-group">
-        <a href="#"><input class="btn btn-info pulll-right" value="Jadwal Dosen" /></a>
-        <a href="#"><input class="btn btn-info pulll-right" value="Jadwal Ruangan" /></a>
-    </div>
- 
- <div class="form-group">
-  <input type="submit" class="btn btn-info pulll-right" name="button" id="button" value="OK" />
-  </div>
-  </form>
- 
-
-                  <div class="form-group">
-                  <label></label>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Nama</label>
+                        <input name="nama" type="text" class="form-control" value="<?php echo $nama_mahasiswa;?>" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Mata Kuliah</label>
+                        <select name="mata_kuliah" class="form-control select2" style="width: 100%;">
+                            <option selected="selected">--Pilih--</option>
+                            <option>Sitem Pendukung Keputusan</option>
+                            <option>Rekayasa Perangkat Lunak</option>
+                            <option>Audit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah SKS</label>
+                        <select name="jumlah_sks" class="form-control select2" style="width: 100%;">
+                            <option selected="selected">--Pilih--</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div> 
                   </div>
-                  </div><div class="col-md-6"></div>
-                  <!-- /.col -->
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Nim</label>
+                          <input name="nim" type="text" class="form-control" value="<?php echo $nim;?>" disabled="disabled" />
+                      </div> 
+                      <div class="form-group">
+                          <label>Jumlah Mahasiswa</label>
+                          <input name="jumlah_mahasiswa" type="number" class="form-control"/>
+                      </div>
+                  </div><!-- /.col -->
                   </div><!-- /.row -->
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>Ruang Sebelum</label>
+                              <input name="ruang_sebelumnya" type="text" class="form-control"/>
+                          </div>
+                          <div class="form-group">
+                               <label>Jadwal Sebelum</label>
+                               <input name="jadwal_sebelumnya" type="text" class="form-control" />
+                           </div>
+                      </div><!-- /.col -->
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>Ruang Request</label>
+                              <input name="ruang_request" type="text" class="form-control" />
+                          </div>
+                            <div class="form-group">
+                                <label>Jadwal Request</label> 
+                                <input name="jadwal_request" type="text" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <a href="<?php echo base_url()."pages/jadwalruang"; ?>"><input class="btn btn-info pulll-right" value="Jadwal Ruangan" /></a>
+                                <a href="<?php echo base_url()."pages/jadwaldosen"; ?>"><input class="btn btn-info pulll-right" value="Jadwal Dosen" /></a>
+                                <button type="submit" class="btn btn-info pull-right">Submit</button>
+                            </div>
+                            <div class="form-group">
+                                
+                            </div>
+                      </div><!-- /.col -->
+                  </div><!-- /.row -->
+                    </form>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
-                 Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about the plugin.
+                 Note : Jika ada yang kurang jelas silakan menghubungi TU yang sedang bertugas berjaga.
                   </div>
                   </div><!-- /.box -->
 

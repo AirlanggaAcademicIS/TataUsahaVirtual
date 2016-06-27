@@ -15,44 +15,14 @@ class Models_petugas_tu extends CI_Model {
         {
             $user = array(
                 'nip' => $row->nip,
-                'password' => $row->password
+                'password' => $row->password,
+                'nama_tu' => $row->nama_tu,
+                'email' => $row->email
             );
             
             $i++;
         }
-        if(isset($user)){
-            if($user['password']==$password){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        else{
-            return false;
-        }
-    }
-
-    function input_user($username, $password){
-        $data = array(
-            'username' => $username,
-            'password' => $password
-        );
-        return $this->db->insert('user', $data);
-
-    }
-
-    function getAllUser() {
-        $query = $this->db->get('user');
         
-        $i = 0;
-        foreach ($query->result_array() as $row)
-        {
-            $user[$i]['username'] = $row['username'];
-            $user[$i]['password'] = $row['password'];
-            
-            $i++;
-        }
         return $user;
     }
 

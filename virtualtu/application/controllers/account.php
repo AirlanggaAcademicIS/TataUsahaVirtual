@@ -21,10 +21,40 @@ class Account extends CI_Controller {
         function Account() { 
             parent::__construct();
             $this->load->helper('url');
+            $this->load->library('session');
+            error_reporting(0);
         } 
+        
+        private function checksess(){
+            if($this->session->userdata('mhs')){
+                redirect(base_url("pages"), 'refresh');
+            }
+            else if($this->session->userdata('ptu')){
+                redirect(base_url("tupages"), 'refresh');
+            }
+        }
+        
 	public function index()
 	{
-            $this->load->view('login');
+            $this->checksess();
+            if(isset($_GET['m'])){
+                if($_GET['m']=='notallow')
+                    $ket = "Anda belum login, silakan login terlebih dahulu.";
+                else if($_GET['m']=='notlogin')
+                    $ket = "Username atau password yang anda masukkan salah, silakan coba kembali.";
+                else
+                    $ket = "Tidak ada keterangan";
+                
+                $data = array(
+                    'ket' => $ket
+                );
+            }
+            else{
+                $data = array(
+                    );
+            }
+            
+            $this->load->view('login', $data);
 	}
 
 	public function sign_in(){   
@@ -36,17 +66,32 @@ class Account extends CI_Controller {
             }
             else{
                 $this->load->model('models_mahasiswa');
-                $hasil = $this->models_mahasiswa->sign_in($nim, $password);
+                $user = $this->models_mahasiswa->sign_in($nim, $password);
+                
+                if($user['password']==$password){
+                    $hasil = true;
+                }
+                else{
+                    $hasil = false;
+                }
             }
             
             if($hasil==true){
+                $sesion_array = array(
+                        'nim' => $user['nim'],
+                        'email' => $user['email'],
+                        'nama_mahasiswa' => $user['nama_mahasiswa']
+                    );
+
+                $this->session->set_userdata('mhs', $sesion_array);
+                
                 redirect(base_url("pages"), 'refresh');
             }
             else{
-                $this->load->view('login');
+                redirect(base_url("?m=notlogin"), 'refresh');
             }
-	}
-        
+	}     
+
         public function sign_in_tu(){   
             $nip = $this->input->post('nip');
             $password = $this->input->post('password');
@@ -56,27 +101,44 @@ class Account extends CI_Controller {
             }
             else{
                 $this->load->model('models_petugas_tu');
-                $hasil = $this->models_petugas_tu->sign_in($nip, $password);
+                $user = $this->models_petugas_tu->sign_in($nip, $password);
+                
+                if($user['password']==$password){
+                    $hasil = true;
+                }
+                else{
+                    $hasil = false;
+                }
             }
             
             if($hasil==true){
+                $sesion_array = array(
+                        'nip' => $user['nip'],
+                        'email' => $user['email'],
+                        'nama_tu' => $user['nama_tu']
+                    );
+
+                $this->session->set_userdata('ptu', $sesion_array);
+                
                 redirect(base_url("tupages"), 'refresh');
             }
             else{
-                $this->load->view('login_tu');
+                redirect(base_url("?m=notlogin"), 'refresh');
             }
 	}
 
-	public function input_u(){
-		$username = $this->input->post('username');
-
-        $password = $this->input->post('password');
-
-        $this->load->model('m_latihan');
-
-        $insert = $this->m_latihan->input_user($username, $password);
-	}
+        public function logout(){
+            $this->session->unset_userdata('mhs');
+            $this->session->sess_destroy();
+            
+            redirect(base_url(""), 'refresh');
+        }
+        
+        public function logout_tu(){
+            $this->session->unset_userdata('ptu');
+            $this->session->sess_destroy();
+            
+            redirect(base_url(""), 'refresh');
+        }
+        
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

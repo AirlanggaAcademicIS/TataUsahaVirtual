@@ -39,24 +39,24 @@
             </div><!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                  <form action="<?php echo base_url(); ?>mahasiswa/log_tu_bantuan/081311633027" method="post">
+                  <form action="<?php echo base_url()."mahasiswa/log_tu_bantuan/".$nim; ?>" method="post">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nama</label>
-                    <input name="nama" type="text" class="form-control" value="Rio Ramadhan Dharmawan" disabled>
+                    <input name="nama" type="text" class="form-control" value="<?php echo $nama_mahasiswa;?>" disabled>
                   </div>
                   <div class="form-group">
                     <label>Nim</label>
-                    <input name="nim" type="text" class="form-control" value="081311633027" disabled>
+                    <input name="nim" type="text" class="form-control" value="<?php echo $nim;?>" disabled>
                   </div>  
                   <div class="form-group">
                     <label>Kepada Bagian</label>
                     <select name="kepada_bagian" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option value="1">Admin Lab</option>
-                      <option value="1">Sarana Prasana</option>
-                      <option value="1">Sistem Informasi Fakultas</option>
-                      <option value="1">Tata Usaha Pusat</option>
+                      <option value="Admin Lab">Admin Lab</option>
+                      <option value="Sarana Prasana">Sarana Prasana</option>
+                      <option value="Sistem Informasi Fakultas">Sistem Informasi Fakultas</option>
+                      <option value="Tata Usaha Pusat">Tata Usaha Pusat</option>
                     </select>
                   </div><!-- /.form-group -->
                 </div><!-- /.col -->
@@ -65,8 +65,11 @@
                     <label>Dosen Wali</label>
                     <select name="dosen_wali" class="form-control select2" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option value="1">DIC</option>
-                      <option value="1">RRD</option>
+                      <?php                      
+                        for($i=0; $i<$jumlah; $i++){
+                            echo "<option value='".$dosen[$i]['id_dosen']."'>".$dosen[$i]['nama_dosen']."</option>";
+                        }
+                      ?>
                     </select>
                   </div><!-- /.form-group -->
                   <!-- textarea -->
@@ -82,7 +85,7 @@
               </div><!-- /.row -->
             </div><!-- /.box-body -->
             <div class="box-footer">
-              Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about the plugin.
+              Note : Jika ada yang kurang jelas silakan menghubungi TU yang sedang bertugas berjaga.
             </div>
           </div><!-- /.box -->
 

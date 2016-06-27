@@ -193,6 +193,8 @@
     <script src="<?php echo base_url(); ?>assets/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url(); ?>assets/js/demo.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
     <!-- page script -->
     <script>
       $(function () {
@@ -210,6 +212,8 @@
           "info": true,
           "autoWidth": false
         });
+        //Add text editor
+        $("#compose-textarea").wysihtml5();
       });
     </script>
   </body>

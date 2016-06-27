@@ -193,6 +193,8 @@
     <script src="<?php echo base_url(); ?>assets/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url(); ?>assets/js/demo.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
     <!-- page script -->
     <script>
       $(function () {
@@ -211,6 +213,11 @@
           "autoWidth": false
         });
       });
+      //Flat red color scheme for iCheck
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+          checkboxClass: 'icheckbox_flat-green',
+          radioClass: 'iradio_flat-green'
+        });
     </script>
   </body>
 </html>

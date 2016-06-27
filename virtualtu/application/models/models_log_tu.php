@@ -42,7 +42,7 @@ class Models_log_tu extends CI_Model {
     }
 
     function getall() {
-        $query = $this->db->query('SELECT * FROM log_tu q1, kategori q2 WHERE q1.id_kategori_log = q2.id_kategori');
+        $query = $this->db->query('SELECT * FROM log_tu q1, kategori q2 WHERE q1.id_kategori_log = q2.id_kategori ORDER BY q1.tanggal_log DESC');
         
         $i = 0;
         foreach ($query->result_array() as $row)

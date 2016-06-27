@@ -51,12 +51,13 @@
               <div class="col-xs-12">
               <!--<div class="box">-->
               <div class="box">
+              <form action="<?php echo base_url(); ?>tatausaha/do_upload" method="post">
                   <div class="box-body">
               <div class="col-md-3"></div>
               <div class="col-md-6">
                   <div class="form-group">
                       <label for="exampleInputFile">File input</label>
-                      <input type="file" id="exampleInputFile">
+                      <input type="file" id="exampleInputFile" name="judul">
                   </div>
                   </div>
               <div class="col-md-3">
@@ -66,6 +67,7 @@
               </div>
                 
               </div>
+              </form>
                   </div>
               </div>
               </div>

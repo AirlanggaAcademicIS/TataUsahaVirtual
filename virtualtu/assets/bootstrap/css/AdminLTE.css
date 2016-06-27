@@ -1080,10 +1080,12 @@ a:focus {
   text-align: center;
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
-  border-left:3px solid 0.2); border-right:3px solid 255; border-top:3px solid rgba(255; border-bottom:3px solid 255; z-index: 5;
+  z-index: 5;
   height: 90px;
   width: 90px;
-  
+  border: 3px solid;
+  border-color: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 .navbar-nav > .user-menu > .dropdown-menu > li.user-header > p {
   z-index: 5;
