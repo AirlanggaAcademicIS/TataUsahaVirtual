@@ -1,0 +1,27 @@
+Fitur PHL 
++ notifikasi jadwal tabrakan
++ ada tanggal
++ meneydiakan field ttd
++ form yang ada di isi form phl
++ respon untuk menetukan status diterima atau tidak
++ diinput -> form dicetak -> format tertentu yg sudah ada -> di print -> ttd dosen ->diberikan ke TU pilihan konfirmasi/ tolak
++ bukti digunakan untuk menindak lanjuti TU
+
+Fitur Request Proposal
++ waktu notifikasi jadwal sidang 
++ ceklist syarat digunakan untuk filter
++ form sudah ada kemuadian di cek di sistemnya
++ simpan nota transaksi ada semua
++ mahasiswa mengetahui kurang / sudah dokumen apa saja yang dikumpulkan
++ form dikirim email kemudian di cetak
++ berupa pdf
+
+Fitur Presensi Mahasiswa
++ cetak form -> lampir asli -> terkumpul di TU
++ range tanggal dan mata kuliah yang tidak dihadapi
++ TU rekap absen per matakuliah
++ ketika ada komplain dibuka sistem untuk mengecek 
++ bukti berupa hardfile (print), 1x request range, absen di jepret
+
+Bantuan Fasilitas dan E-form 
++ di cek kembali database ada yang eror

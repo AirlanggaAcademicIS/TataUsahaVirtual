@@ -1,4 +1,10 @@
       <!-- Content Wrapper. Contains page content -->
+<style type="text/css">
+<!--
+.style1 {color: #000000}
+-->
+</style>
+
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -17,10 +23,9 @@
           <!-- Default box -->
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Selamat datang di TU Virtual</h3>
-            </div>
+              <h1 align="center" class="box-title style1"><strong>Selamat datang di TU Virtual</strong></h1>
+			  </div>
             <div class="box-body">
-              Silakan melanjutkan pekerjaan anda.
             </div><!-- /.box-body -->
             <div class="box-footer">
               <!--Footer-->

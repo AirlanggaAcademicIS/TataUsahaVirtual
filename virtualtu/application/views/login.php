@@ -27,7 +27,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<style type="text/css">
+<!--
+.style1 {
+	font-size: xx-large;
+	color: #FFFFFF;
+}
+.style2 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+-->
+    </style>
   </head>
+<<<<<<< HEAD
   <body class="hold-transition login-page">
       <div class="modal-dialog">
                 <div class="modal-content">
@@ -140,6 +153,82 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
+=======
+  <body class="hold-transition skin-blue layout-boxed sidebar-mini">
+  <div class="control-sidebar-bg"></div>
+  <div class="container">
+    <div class="row">
+      
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="position:absolute;">
+      	<!-- Carousel Indikator -->
+        <ol class="carousel-indicators">
+        	<li data-target="carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+		
+		<!-- Wrapper for Slide -->
+        <div class="carousel-inner">
+        	<div class="item active">
+            	<img src="asset/img/4a.png" alt="Slide 1" width="1175px" height="1175px">
+                <div class="carousel-caption">
+                	<h3>Wisudawan Fakultas Sains dan Teknologi</h3>
+                </div>
+            </div>
+            
+            <div class="item">
+            	<img src="assets/img/3a.png" alt="Slide 1" width="1175px" height="1175px">
+                <div class="carousel-caption">
+                	<h3>Lambang Universitas Airlangga</h3>
+                </div>
+				</div>
+			</div>
+        </div>
+		
+		<!-- Control -->
+        <a href="#carousel-example-generic" class="carousel-control left" data-slide="prev" role="button">
+        	<span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a href="#carousel-example-generic" class="carousel-control right" data-slide="next" role="button">
+        	<span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div> 
+   	  <div class="col-mid-4">
+    <div class="login-box">
+      <div class="login-logo">
+          
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+	  
+        <form action="<?php echo base_url(); ?>account/sign_in" method="post">
+          <div class="form-group has-feedback">
+		   <h6 align="center" class="login-box-msg style1"><b>Tata Usaha Virtual</b></h6>
+		   <h5 align="center" class="login-box-msg style2">Sign in to Start Your Session</h5>
+		   <form action="<?php echo base_url(); ?>account/sign_in" method="post">
+          <div class="form-group has-feedback">
+            <input type="text" name="nim" class="form-control" placeholder="NIM">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+		  
+          <div class="row">
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            </div><!-- /.col -->
+	
+        </form>
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+	</div>
+	</div>
+	
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+>>>>>>> origin/master
 
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
